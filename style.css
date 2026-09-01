@@ -1,3246 +1,1121 @@
-<!DOCTYPE html>
-<html lang="en">
+/* =====================================================
+   HOTEL EVENTO
+   Main Stylesheet
+   ===================================================== */
 
-<head>
+:root {
+    --gold: #c9a45c;
+    --gold-dark: #a9823e;
 
-    <meta charset="UTF-8">
+    --black: #111111;
+    --dark: #181818;
+    --dark-2: #222222;
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    --cream: #f7f4ed;
+    --white: #ffffff;
+    --text: #666666;
+    --light-text: #d7d7d7;
 
-    <meta name="description"
-        content="Hotel Evento — Stay, dine and celebrate in Washim, Maharashtra.">
+    --heading: "Cormorant Garamond", serif;
+    --body: "Poppins", sans-serif;
 
-    <meta name="keywords"
-        content="Hotel Evento, Hotel in Washim, Restaurant in Washim, Events in Washim">
+    --container: 1200px;
+}
 
-    <meta name="author" content="Hotel Evento">
 
-    <meta name="theme-color" content="#171412">
+/* ================= RESET ================= */
 
-    <title>Hotel Evento | Stay. Dine. Celebrate.</title>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 
-    <!-- =====================================================
-         GOOGLE FONTS
-         ===================================================== -->
+html {
+    scroll-behavior: smooth;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+body {
+    font-family: var(--body);
+    background: var(--cream);
+    color: var(--black);
+    line-height: 1.6;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    <!-- =====================================================
-         COMPLETE RESPONSIVE CSS
-         ===================================================== -->
 
-    <style>
+button {
+    font-family: inherit;
+}
 
-        /* =================================================
-           RESET
-           ================================================= */
 
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+img {
+    max-width: 100%;
+    display: block;
+}
 
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
+/* ================= CONTAINER ================= */
 
+.container {
+    width: min(90%, var(--container));
+    margin: auto;
+}
 
-        body {
-            width: 100%;
-            min-height: 100vh;
-            overflow-x: hidden;
-            background: #171412;
-            color: #f4eee6;
-            font-family: "Poppins", sans-serif;
-            line-height: 1.7;
-        }
 
+/* ================= NAVBAR ================= */
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 
+    background: rgba(17, 17, 17, 0.94);
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+    border-bottom: 1px solid rgba(201, 164, 92, 0.2);
 
+    backdrop-filter: blur(12px);
+}
 
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
 
+.navbar-container {
+    height: 82px;
 
-        button {
-            font-family: inherit;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 
-        /* =================================================
-           VARIABLES
-           ================================================= */
+/* ================= LOGO ================= */
 
-        :root {
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
 
-            --dark: #171412;
-            --dark-2: #211c19;
-            --dark-3: #29231f;
 
-            --cream: #f4eee6;
-            --cream-2: #e8ded2;
+.logo-small {
+    color: var(--gold);
 
-            --gold: #c9a45c;
-            --gold-light: #dfc27f;
+    font-size: 9px;
 
-            --text-muted: #b9afa5;
+    letter-spacing: 5px;
 
-            --border: rgba(201, 164, 92, 0.25);
+    margin-left: 3px;
+}
 
-            --container: 1200px;
 
-            --radius: 4px;
+.logo-main {
+    color: var(--white);
 
-            --transition: 0.3s ease;
-        }
+    font-family: var(--heading);
 
+    font-size: 30px;
 
-        /* =================================================
-           CONTAINER
-           ================================================= */
+    font-weight: 600;
 
-        .container {
-            width: min(
-                calc(100% - 40px),
-                var(--container)
-            );
+    letter-spacing: 4px;
 
-            margin-inline: auto;
-        }
+    margin-top: 5px;
+}
 
 
-        /* =================================================
-           NAVBAR
-           ================================================= */
+/* ================= NAVIGATION ================= */
 
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
 
-            background: rgba(23, 20, 18, 0.94);
 
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+.nav-link {
+    position: relative;
 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
+    color: #d4d4d4;
 
+    font-size: 12px;
 
-        .navbar-container {
-            min-height: 78px;
+    transition: 0.3s;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
 
-            gap: 30px;
-        }
+.nav-link::after {
+    content: "";
 
+    position: absolute;
 
-        /* =================================================
-           LOGO
-           ================================================= */
+    left: 0;
+    bottom: -8px;
 
-        .logo {
-            flex-shrink: 0;
+    width: 0;
+    height: 1px;
 
-            display: flex;
-            flex-direction: column;
+    background: var(--gold);
 
-            line-height: 1;
+    transition: 0.3s;
+}
 
-            color: var(--cream);
-        }
 
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold);
+}
 
-        .logo-small {
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: 5px;
 
-            color: var(--gold);
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
 
-            margin-bottom: 5px;
-        }
 
+/* ================= NAV BUTTON ================= */
 
-        .logo-main {
-            font-family: "Cormorant Garamond", serif;
+.nav-button {
+    padding: 11px 21px;
 
-            font-size: 34px;
-            font-weight: 600;
+    border: 1px solid var(--gold);
 
-            letter-spacing: 3px;
-        }
+    color: var(--gold);
 
+    font-size: 11px;
 
-        /* =================================================
-           DESKTOP NAV
-           ================================================= */
+    text-transform: uppercase;
 
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
+    letter-spacing: 1px;
 
-            gap: clamp(18px, 2.5vw, 36px);
-        }
+    transition: 0.3s;
+}
 
 
-        .nav-link {
-            position: relative;
+.nav-button:hover {
+    background: var(--gold);
 
-            color: #d8d0c8;
+    color: var(--black);
+}
 
-            font-size: 13px;
-            font-weight: 400;
 
-            letter-spacing: 0.5px;
+/* ================= MOBILE MENU ================= */
 
-            padding: 10px 0;
+.menu-toggle {
+    display: none;
 
-            transition: color var(--transition);
-        }
+    background: none;
 
+    border: none;
 
-        .nav-link::after {
-            content: "";
+    color: white;
 
-            position: absolute;
+    font-size: 27px;
 
-            left: 0;
-            bottom: 2px;
+    cursor: pointer;
+}
 
-            width: 0;
-            height: 1px;
 
-            background: var(--gold);
+/* ================= HERO ================= */
 
-            transition: width var(--transition);
-        }
+.hero {
+    position: relative;
 
+    min-height: 100vh;
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--gold-light);
-        }
+    display: flex;
+    align-items: center;
 
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-
-        /* =================================================
-           MOBILE MENU BUTTON
-           ================================================= */
-
-        .menu-toggle {
-            display: none;
-
-            width: 44px;
-            height: 44px;
-
-            border: 1px solid var(--border);
-
-            background: transparent;
-
-            cursor: pointer;
-
-            padding: 10px;
-
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-        }
-
-
-        .menu-toggle span {
-            display: block;
-
-            width: 100%;
-            height: 2px;
-
-            background: var(--cream);
-
-            transition: var(--transition);
-        }
-
-
-        /* =================================================
-           HERO
-           ================================================= */
-
-        .hero {
-            position: relative;
-
-            min-height: 100svh;
-
-            display: flex;
-            align-items: center;
-
-            padding: 140px 0 100px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(23,20,18,0.96) 0%,
-                    rgba(23,20,18,0.78) 45%,
-                    rgba(23,20,18,0.45) 100%
-                ),
-                linear-gradient(
-                    180deg,
-                    #302721,
-                    #171412
-                );
-
-            isolation: isolate;
-        }
-
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-
-            background:
-                radial-gradient(
-                    circle at 80% 30%,
-                    rgba(201,164,92,0.13),
-                    transparent 35%
-                );
-
-            z-index: -1;
-        }
-
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-
-        .hero-subtitle,
-        .section-label {
-            color: var(--gold);
-
-            font-size: 12px;
-            font-weight: 500;
-
-            letter-spacing: 4px;
-
-            margin-bottom: 18px;
-        }
-
-
-        .hero-title {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: clamp(
-                58px,
-                8vw,
-                110px
-            );
-
-            font-weight: 500;
-
-            line-height: 0.95;
-
-            letter-spacing: -2px;
-
-            margin-bottom: 30px;
-        }
-
-
-        .hero-title span {
-            display: block;
-            color: var(--gold);
-        }
-
-
-        .hero-description {
-            max-width: 600px;
-
-            color: var(--text-muted);
-
-            font-size: clamp(
-                15px,
-                1.4vw,
-                18px
-            );
-
-            line-height: 1.8;
-
-            margin-bottom: 38px;
-        }
-
-
-        /* =================================================
-           BUTTONS
-           ================================================= */
-
-        .hero-buttons,
-        .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-
-        .btn {
-            min-height: 52px;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 13px 27px;
-
-            border: 1px solid transparent;
-
-            font-size: 12px;
-            font-weight: 500;
-
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-
-            transition:
-                transform var(--transition),
-                background var(--transition),
-                color var(--transition),
-                border-color var(--transition);
-        }
-
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-
-        .btn-primary {
-            background: var(--gold);
-            color: #171412;
-        }
-
-
-        .btn-primary:hover {
-            background: var(--gold-light);
-        }
-
-
-        .btn-outline {
-            border-color: var(--gold);
-            color: var(--cream);
-            background: transparent;
-        }
-
-
-        .btn-outline:hover {
-            background: var(--gold);
-            color: #171412;
-        }
-
-
-        /* =================================================
-           SCROLL INDICATOR
-           ================================================= */
-
-        .scroll-indicator {
-            position: absolute;
-
-            right: 40px;
-            bottom: 40px;
-
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            color: var(--text-muted);
-
-            font-size: 9px;
-            letter-spacing: 2px;
-        }
-
-
-        .scroll-line {
-            width: 45px;
-            height: 1px;
-
-            background: var(--gold);
-        }
-
-
-        /* =================================================
-           QUICK ACTIONS
-           ================================================= */
-
-        .quick-actions {
-            position: relative;
-            z-index: 5;
-
-            background: var(--dark-2);
-
-            border-block: 1px solid rgba(255,255,255,0.06);
-        }
-
-
-        .quick-actions-container {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-        }
-
-
-        .quick-action {
-            min-height: 100px;
-
-            display: flex;
-            align-items: center;
-
-            gap: 15px;
-
-            padding: 20px;
-
-            border-right: 1px solid rgba(255,255,255,0.08);
-
-            transition: background var(--transition);
-        }
-
-
-        .quick-action:last-child {
-            border-right: 0;
-        }
-
-
-        .quick-action:hover {
-            background: var(--dark-3);
-        }
-
-
-        .action-icon {
-            width: 42px;
-            height: 42px;
-
-            flex-shrink: 0;
-
-            display: grid;
-            place-items: center;
-
-            border: 1px solid var(--border);
-
-            color: var(--gold);
-
-            font-size: 18px;
-        }
-
-
-        .action-content {
-            display: flex;
-            flex-direction: column;
-
-            min-width: 0;
-        }
-
-
-        .action-content small {
-            color: var(--gold);
-
-            font-size: 9px;
-            letter-spacing: 2px;
-        }
-
-
-        .action-content strong {
-            color: var(--cream);
-
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-
-        /* =================================================
-           GENERAL SECTION
-           ================================================= */
-
-        .section {
-            padding-block: clamp(
-                75px,
-                9vw,
-                130px
-            );
-        }
-
-
-        .section-heading {
-            max-width: 700px;
-
-            margin-bottom: 55px;
-        }
-
-
-        .section-heading h2,
-        .about-content h2,
-        .restaurant-content h2,
-        .contact-content h2,
-        .events-content h2,
-        .final-cta h2 {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: clamp(
-                42px,
-                5vw,
-                72px
-            );
-
-            font-weight: 500;
-
-            line-height: 1.05;
-
-            letter-spacing: -1px;
-        }
-
-
-        h2 span {
-            color: var(--gold);
-        }
-
-
-        /* =================================================
-           ABOUT
-           ================================================= */
-
-        .about {
-            background: var(--dark);
-        }
-
-
-        .about-grid {
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 1fr)
-                minmax(0, 1fr);
-
-            gap: clamp(40px, 7vw, 100px);
-
-            align-items: center;
-        }
-
-
-        .about-image {
-            min-height: 550px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #3a3029,
-                    #201b18
-                );
-
-            border: 1px solid var(--border);
-
-            display: grid;
-            place-items: center;
-        }
-
-
-        .image-placeholder {
-            width: 75%;
-            height: 75%;
-
-            display: grid;
-            place-items: center;
-
-            border: 1px solid var(--border);
-
-            color: var(--gold);
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: clamp(
-                24px,
-                3vw,
-                42px
-            );
-
-            letter-spacing: 4px;
-
-            text-align: center;
-        }
-
-
-        .about-content > p:not(.section-label) {
-            max-width: 650px;
-
-            color: var(--text-muted);
-
-            font-size: 15px;
-
-            margin-top: 25px;
-        }
-
-
-        .text-button {
-            display: inline-block;
-
-            margin-top: 30px;
-
-            color: var(--gold);
-
-            font-size: 12px;
-
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-
-            border-bottom: 1px solid var(--gold);
-
-            padding-bottom: 5px;
-        }
-
-
-        /* =================================================
-           FEATURES
-           ================================================= */
-
-        .features {
-            background: var(--dark-2);
-        }
-
-
-        .features-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, minmax(0, 1fr));
-
-            border-top: 1px solid var(--border);
-            border-left: 1px solid var(--border);
-        }
-
-
-        .feature-card {
-            min-height: 260px;
-
-            padding: 35px 28px;
-
-            border-right: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-
-            transition:
-                background var(--transition),
-                transform var(--transition);
-        }
-
-
-        .feature-card:hover {
-            background: var(--dark-3);
-            transform: translateY(-4px);
-        }
-
-
-        .feature-card > span {
-            color: var(--gold);
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 25px;
-        }
-
-
-        .feature-card h3 {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 28px;
-            font-weight: 500;
-
-            margin: 30px 0 12px;
-        }
-
-
-        .feature-card p {
-            color: var(--text-muted);
-
-            font-size: 13px;
-
-            line-height: 1.8;
-        }
-
-
-        /* =================================================
-           ROOMS
-           ================================================= */
-
-        .rooms {
-            background: var(--dark);
-        }
-
-
-        .rooms-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 24px;
-        }
-
-
-        .room-card {
-            background: var(--dark-2);
-
-            border: 1px solid rgba(255,255,255,0.07);
-
-            overflow: hidden;
-
-            transition:
-                transform var(--transition),
-                border-color var(--transition);
-        }
-
-
-        .room-card:hover {
-            transform: translateY(-6px);
-
-            border-color: var(--border);
-        }
-
-
-        .room-image {
-            aspect-ratio: 16 / 10;
-
-            display: grid;
-            place-items: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #3a3029,
-                    #211c19
-                );
-
-            color: var(--gold);
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 25px;
-        }
-
-
-        .room-content {
-            padding: 28px;
-        }
-
-
-        .card-label {
-            color: var(--gold);
-
-            font-size: 9px;
-            letter-spacing: 2px;
-        }
-
-
-        .room-content h3 {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 31px;
-            font-weight: 500;
-
-            margin: 12px 0;
-        }
-
-
-        .room-content > p:not(.card-label) {
-            color: var(--text-muted);
-
-            font-size: 13px;
-
-            margin-bottom: 20px;
-        }
-
-
-        .room-content a {
-            color: var(--gold);
-
-            font-size: 11px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-
-        /* =================================================
-           RESTAURANT
-           ================================================= */
-
-        .restaurant {
-            background: var(--dark-2);
-        }
-
-
-        .restaurant-grid {
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 0.85fr)
-                minmax(0, 1.15fr);
-
-            gap: clamp(40px, 7vw, 100px);
-
-            align-items: center;
-        }
-
-
-        .restaurant-content > p:not(.section-label) {
-            max-width: 550px;
-
-            color: var(--text-muted);
-
-            margin: 25px 0 30px;
-
-            font-size: 15px;
-        }
-
-
-        .restaurant-image {
-            min-height: 520px;
-
-            display: grid;
-            place-items: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #49382c,
-                    #211c19
-                );
-
-            border: 1px solid var(--border);
-
-            color: var(--gold);
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 30px;
-
-            text-align: center;
-        }
-
-
-        /* =================================================
-           MENU
-           ================================================= */
-
-        .menu {
-            background: var(--dark);
-        }
-
-
-        .menu-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            border-top: 1px solid var(--border);
-            border-left: 1px solid var(--border);
-        }
-
-
-        .menu-item {
-            min-height: 180px;
-
-            padding: 30px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            border-right: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-
-            transition: background var(--transition);
-        }
-
-
-        .menu-item:hover {
-            background: var(--dark-2);
-        }
-
-
-        .menu-item span {
-            color: var(--gold);
-
-            font-size: 12px;
-            letter-spacing: 2px;
-        }
-
-
-        .menu-item h3 {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 30px;
-            font-weight: 500;
-        }
-
-
-        /* =================================================
-           EVENTS
-           ================================================= */
-
-        .events {
-            position: relative;
-
-            min-height: 620px;
-
-            display: flex;
-            align-items: center;
-
-            background:
-                linear-gradient(
-                    rgba(23,20,18,0.78),
-                    rgba(23,20,18,0.92)
-                ),
-                linear-gradient(
-                    135deg,
-                    #4b3a2d,
-                    #1b1715
-                );
-        }
-
-
-        .events-content {
-            position: relative;
-            z-index: 2;
-
-            max-width: 800px;
-        }
-
-
-        .events-content > p:not(.section-label) {
-            max-width: 550px;
-
-            color: var(--text-muted);
-
-            margin: 25px 0 30px;
-        }
-
-
-        /* =================================================
-           GALLERY
-           ================================================= */
-
-        .gallery {
-            background: var(--dark-2);
-        }
-
-
-        .gallery-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 12px;
-        }
-
-
-        .gallery-item {
-            min-height: 250px;
-
-            display: grid;
-            place-items: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #3a3029,
-                    #211c19
-                );
-
-            border: 1px solid rgba(255,255,255,0.07);
-
-            color: var(--gold);
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 28px;
-
-            transition:
-                transform var(--transition),
-                border-color var(--transition);
-        }
-
-
-        .gallery-item:hover {
-            transform: scale(0.985);
-            border-color: var(--border);
-        }
-
-
-        /* =================================================
-           CONTACT
-           ================================================= */
-
-        .contact {
-            background: var(--dark);
-        }
-
-
-        .contact-grid {
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 0.9fr)
-                minmax(0, 1.1fr);
-
-            gap: clamp(40px, 7vw, 90px);
-
-            align-items: stretch;
-        }
-
-
-        .contact-details {
-            display: grid;
-
-            gap: 25px;
-
-            margin-top: 35px;
-        }
-
-
-        .contact-detail small {
-            color: var(--gold);
-
-            font-size: 9px;
-            letter-spacing: 2px;
-        }
-
-
-        .contact-detail p {
-            color: var(--text-muted);
-
-            font-size: 14px;
-
-            margin-top: 5px;
-        }
-
-
-        .contact-detail a {
-            color: var(--cream);
-
-        }
-
-
-        .contact-actions {
-            display: flex;
-            flex-wrap: wrap;
-
-            gap: 10px;
-
-            margin-top: 35px;
-        }
-
-
-        .contact-action {
-            min-height: 48px;
-
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-
-            padding: 10px 17px;
-
-            border: 1px solid var(--border);
-
-            color: var(--cream);
-
-            font-size: 11px;
-
-            transition: var(--transition);
-        }
-
-
-        .contact-action:hover {
-            background: var(--gold);
-            color: var(--dark);
-        }
-
-
-        .map-container {
-            width: 100%;
-            min-height: 500px;
-
-            border: 1px solid var(--border);
-
-            overflow: hidden;
-        }
-
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-
-            min-height: 500px;
-
-            display: block;
-
-            border: 0;
-        }
-
-
-        /* =================================================
-           FINAL CTA
-           ================================================= */
-
-        .final-cta {
-            padding-block: 100px;
-
-            text-align: center;
-
-            background: var(--dark-2);
-
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
-
-
-        .final-cta .section-label {
-            margin-bottom: 15px;
-        }
-
-
-        .final-cta h2 {
-            max-width: 700px;
-
-            margin: 0 auto 35px;
-        }
-
-
-        .cta-buttons {
-            justify-content: center;
-        }
-
-
-        /* =================================================
-           FOOTER
-           ================================================= */
-
-        .footer {
-            background: #100e0d;
-
-            padding-top: 75px;
-        }
-
-
-        .footer-grid {
-            display: grid;
-
-            grid-template-columns:
-                1.3fr
-                1fr
-                1.2fr
-                1fr;
-
-            gap: 45px;
-
-            padding-bottom: 60px;
-        }
-
-
-        .footer h4 {
-            color: var(--gold);
-
-            font-size: 11px;
-            font-weight: 500;
-
-            letter-spacing: 2px;
-            text-transform: uppercase;
-
-            margin-bottom: 20px;
-        }
-
-
-        .footer p,
-        .footer a {
-            color: var(--text-muted);
-
-            font-size: 13px;
-        }
-
-
-        .footer-brand .logo-main {
-            font-size: 32px;
-        }
-
-
-        .footer-brand > p {
-            margin-top: 15px;
-        }
-
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-
-        .footer-links a:hover,
-        .footer-contact a:hover {
-            color: var(--gold);
-        }
-
-
-        .footer-contact p + p {
-            margin-top: 15px;
-        }
-
-
-        .social-links {
-            display: flex;
-            gap: 10px;
-
-            margin-top: 20px;
-        }
-
-
-        .social-links a {
-            width: 38px;
-            height: 38px;
-
-            display: grid;
-            place-items: center;
-
-            border: 1px solid var(--border);
-
-            color: var(--gold);
-
-            transition: var(--transition);
-        }
-
-
-        .social-links a:hover {
-            background: var(--gold);
-            color: var(--dark);
-        }
-
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.07);
-
-            padding: 20px;
-
-            text-align: center;
-        }
-
-
-        .footer-bottom p {
-            color: #817970;
-
-            font-size: 11px;
-        }
-
-
-        /* =================================================
-           LARGE TABLET
-           ================================================= */
-
-        @media (max-width: 1000px) {
-
-            .nav-menu {
-                gap: 18px;
-            }
-
-
-            .nav-link {
-                font-size: 12px;
-            }
-
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-
-            .rooms-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-
-            .rooms-grid .room-card:last-child {
-                grid-column: 1 / -1;
-                max-width: calc(50% - 12px);
-                width: 100%;
-                justify-self: center;
-            }
-
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-        }
-
-
-        /* =================================================
-           MOBILE NAVIGATION
-           ================================================= */
-
-        @media (max-width: 800px) {
-
-            .container {
-                width: min(
-                    calc(100% - 32px),
-                    var(--container)
-                );
-            }
-
-
-            .navbar-container {
-                min-height: 70px;
-            }
-
-
-            .logo-main {
-                font-size: 29px;
-            }
-
-
-            .logo-small {
-                font-size: 8px;
-                letter-spacing: 4px;
-            }
-
-
-            .menu-toggle {
-                display: flex;
-            }
-
-
-            .nav-menu {
-                position: absolute;
-
-                top: 100%;
-                left: 0;
-
-                width: 100%;
-
-                padding: 15px 16px 20px;
-
-                display: none;
-                flex-direction: column;
-                align-items: stretch;
-
-                gap: 2px;
-
-                background: rgba(23,20,18,0.98);
-
-                border-top: 1px solid rgba(255,255,255,0.06);
-
-                box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-            }
-
-
-            .nav-menu.open {
-                display: flex;
-            }
-
-
-            .nav-link {
-                width: 100%;
-
-                padding: 13px 5px;
-
-                font-size: 13px;
-            }
-
-
-            .nav-link::after {
-                display: none;
-            }
-
-
-            /* HERO */
-
-            .hero {
-                min-height: 100svh;
-
-                padding: 125px 0 80px;
-
-                background:
-                    linear-gradient(
-                        rgba(23,20,18,0.88),
-                        rgba(23,20,18,0.96)
-                    ),
-                    linear-gradient(
-                        135deg,
-                        #403229,
-                        #171412
-                    );
-            }
-
-
-            .hero-content {
-                max-width: 100%;
-            }
-
-
-            .hero-subtitle {
-                font-size: 9px;
-                letter-spacing: 2.5px;
-            }
-
-
-            .hero-title {
-                font-size: clamp(
-                    50px,
-                    15vw,
-                    78px
-                );
-
-                letter-spacing: -1px;
-
-                margin-bottom: 25px;
-            }
-
-
-            .hero-description {
-                font-size: 14px;
-
-                line-height: 1.75;
-
-                margin-bottom: 30px;
-            }
-
-
-            .hero-buttons {
-                display: grid;
-
-                grid-template-columns: 1fr;
-
-                width: 100%;
-            }
-
-
-            .btn {
-                width: 100%;
-
-                min-height: 50px;
-            }
-
-
-            .scroll-indicator {
-                display: none;
-            }
-
-
-            /* QUICK ACTIONS */
-
-            .quick-actions-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-
-            .quick-action {
-                min-height: 85px;
-
-                padding: 15px;
-
-                border-right: 1px solid rgba(255,255,255,0.08);
-                border-bottom: 1px solid rgba(255,255,255,0.08);
-            }
-
-
-            .quick-action:nth-child(2) {
-                border-right: 0;
-            }
-
-
-            .quick-action:nth-child(3),
-            .quick-action:nth-child(4) {
-                border-bottom: 0;
-            }
-
-
-            .action-icon {
-                width: 36px;
-                height: 36px;
-
-                font-size: 15px;
-            }
-
-
-            .action-content small {
-                font-size: 8px;
-            }
-
-
-            .action-content strong {
-                font-size: 11px;
-            }
-
-
-            /* ABOUT */
-
-            .about-grid,
-            .restaurant-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-
-                gap: 45px;
-            }
-
-
-            .about-image {
-                min-height: 380px;
-            }
-
-
-            .image-placeholder {
-                width: 80%;
-                height: 80%;
-
-                font-size: 25px;
-            }
-
-
-            /* SECTION */
-
-            .section {
-                padding-block: 75px;
-            }
-
-
-            .section-heading {
-                margin-bottom: 35px;
-            }
-
-
-            .section-label {
-                font-size: 9px;
-
-                letter-spacing: 2.5px;
-
-                margin-bottom: 14px;
-            }
-
-
-            .section-heading h2,
-            .about-content h2,
-            .restaurant-content h2,
-            .contact-content h2,
-            .events-content h2,
-            .final-cta h2 {
-                font-size: clamp(
-                    40px,
-                    12vw,
-                    58px
-                );
-            }
-
-
-            /* FEATURES */
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .feature-card {
-                min-height: auto;
-
-                padding: 28px 22px;
-            }
-
-
-            .feature-card h3 {
-                font-size: 27px;
-
-                margin: 20px 0 10px;
-            }
-
-
-            /* ROOMS */
-
-            .rooms-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .rooms-grid .room-card:last-child {
-                grid-column: auto;
-
-                max-width: none;
-            }
-
-
-            .room-content {
-                padding: 24px 20px;
-            }
-
-
-            /* RESTAURANT */
-
-            .restaurant-image {
-                min-height: 360px;
-
-                font-size: 25px;
-            }
-
-
-            /* MENU */
-
-            .menu-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-
-            .menu-item {
-                min-height: 145px;
-
-                padding: 22px 18px;
-            }
-
-
-            .menu-item h3 {
-                font-size: 25px;
-            }
-
-
-            /* EVENTS */
-
-            .events {
-                min-height: 520px;
-            }
-
-
-            /* GALLERY */
-
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-
-                gap: 8px;
-            }
-
-
-            .gallery-item {
-                min-height: 180px;
-
-                font-size: 23px;
-            }
-
-
-            /* CONTACT */
-
-            .map-container,
-            .map-container iframe {
-                min-height: 380px;
-            }
-
-
-            .contact-actions {
-                display: grid;
-
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-
-            .contact-action {
-                justify-content: center;
-
-                padding-inline: 8px;
-            }
-
-
-            /* CTA */
-
-            .final-cta {
-                padding-block: 75px;
-            }
-
-
-            /* FOOTER */
-
-            .footer {
-                padding-top: 60px;
-            }
-
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-
-                gap: 40px 25px;
-            }
-
-        }
-
-
-        /* =================================================
-           SMALL MOBILE
-           ================================================= */
-
-        @media (max-width: 480px) {
-
-            .container {
-                width: calc(100% - 28px);
-            }
-
-
-            .navbar-container {
-                min-height: 64px;
-            }
-
-
-            .logo-main {
-                font-size: 26px;
-                letter-spacing: 2px;
-            }
-
-
-            .hero {
-                padding-top: 110px;
-            }
-
-
-            .hero-title {
-                font-size: clamp(
-                    46px,
-                    14vw,
-                    65px
-                );
-
-                line-height: 0.98;
-            }
-
-
-            .hero-description {
-                font-size: 13px;
-            }
-
-
-            .quick-action {
-                gap: 9px;
-
-                padding: 12px 10px;
-            }
-
-
-            .action-icon {
-                width: 32px;
-                height: 32px;
-            }
-
-
-            .action-content strong {
-                font-size: 10px;
-            }
-
-
-            .about-image {
-                min-height: 300px;
-            }
-
-
-            .image-placeholder {
-                width: 85%;
-                height: 75%;
-
-                font-size: 21px;
-
-                letter-spacing: 2px;
-            }
-
-
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .menu-item {
-                min-height: 125px;
-            }
-
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .gallery-item {
-                min-height: 230px;
-            }
-
-
-            .contact-actions {
-                grid-template-columns: 1fr;
-            }
-
-
-            .contact-action {
-                justify-content: flex-start;
-
-                padding: 13px 16px;
-            }
-
-
-            .map-container,
-            .map-container iframe {
-                min-height: 320px;
-            }
-
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .footer-bottom {
-                padding-inline: 14px;
-            }
-
-        }
-
-
-        /* =================================================
-           VERY SMALL PHONES
-           ================================================= */
-
-        @media (max-width: 360px) {
-
-            .hero-title {
-                font-size: 43px;
-            }
-
-
-            .quick-action {
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                gap: 6px;
-            }
-
-
-            .action-content strong {
-                font-size: 9px;
-            }
-
-        }
-
-
-        /* =================================================
-           REDUCE MOTION
-           ================================================= */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-
-            *,
-            *::before,
-            *::after {
-                transition-duration: 0.01ms !important;
-            }
-
-        }
-
-    </style>
-
-</head>
-
-
-<body>
-
-
-    <!-- =====================================================
-         NAVBAR
-         ===================================================== -->
-
-    <header class="navbar">
-
-        <div class="container navbar-container">
-
-
-            <a href="#home"
-                class="logo"
-                aria-label="Hotel Evento">
-
-                <span class="logo-small">
-                    HOTEL
-                </span>
-
-                <span class="logo-main">
-                    EVENTO
-                </span>
-
-            </a>
-
-
-            <nav
-                id="main-navigation"
-                class="nav-menu"
-                aria-label="Main Navigation">
-
-                <a href="#home"
-                    class="nav-link active">
-                    Home
-                </a>
-
-                <a href="#about"
-                    class="nav-link">
-                    About
-                </a>
-
-                <a href="#rooms"
-                    class="nav-link">
-                    Rooms
-                </a>
-
-                <a href="#restaurant"
-                    class="nav-link">
-                    Restaurant
-                </a>
-
-                <a href="#events"
-                    class="nav-link">
-                    Events
-                </a>
-
-                <a href="#gallery"
-                    class="nav-link">
-                    Gallery
-                </a>
-
-                <a href="#contact"
-                    class="nav-link">
-                    Contact
-                </a>
-
-            </nav>
-
-
-            <button
-                type="button"
-                class="menu-toggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="main-navigation">
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
-        </div>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         MAIN
-         ===================================================== -->
-
-    <main>
-
-
-        <!-- HERO -->
-
-        <section id="home"
-            class="hero">
-
-            <div class="hero-overlay"></div>
-
-            <div class="container hero-content">
-
-                <p class="hero-subtitle">
-                    WELCOME TO HOTEL EVENTO
-                </p>
-
-                <h1 class="hero-title">
-
-                    Stay. Dine.
-
-                    <span>
-                        Celebrate.
-                    </span>
-
-                </h1>
-
-                <p class="hero-description">
-
-                    Experience warm hospitality, comfortable stays
-                    and memorable dining in the heart of Washim.
-
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#rooms"
-                        class="btn btn-primary">
-                        Explore Hotel
-                    </a>
-
-                    <a href="#restaurant"
-                        class="btn btn-outline">
-                        Discover Dining
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <a href="#about"
-                class="scroll-indicator">
-
-                <span>
-                    SCROLL TO EXPLORE
-                </span>
-
-                <span class="scroll-line"></span>
-
-            </a>
-
-        </section>
-
-
-
-        <!-- QUICK ACTIONS -->
-
-        <section class="quick-actions">
-
-            <div class="container quick-actions-container">
-
-
-                <a href="tel:+919858277700"
-                    class="quick-action">
-
-                    <span class="action-icon">
-                        ☎
-                    </span>
-
-                    <span class="action-content">
-
-                        <small>
-                            CALL US
-                        </small>
-
-                        <strong>
-                            Contact Hotel
-                        </strong>
-
-                    </span>
-
-                </a>
-
-
-                <a href="https://wa.me/919858277700"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="quick-action">
-
-                    <span class="action-icon">
-                        ◉
-                    </span>
-
-                    <span class="action-content">
-
-                        <small>
-                            WHATSAPP
-                        </small>
-
-                        <strong>
-                            Chat With Us
-                        </strong>
-
-                    </span>
-
-                </a>
-
-
-                <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Evento,+Near+Watane+Lawns,+Akola+Road,+Washim,+Maharashtra+444505"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="quick-action">
-
-                    <span class="action-icon">
-                        ⌖
-                    </span>
-
-                    <span class="action-content">
-
-                        <small>
-                            LOCATION
-                        </small>
-
-                        <strong>
-                            Get Directions
-                        </strong>
-
-                    </span>
-
-                </a>
-
-
-                <a href="#contact"
-                    class="quick-action">
-
-                    <span class="action-icon">
-                        ✦
-                    </span>
-
-                    <span class="action-content">
-
-                        <small>
-                            ENQUIRY
-                        </small>
-
-                        <strong>
-                            Make an Enquiry
-                        </strong>
-
-                    </span>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ABOUT -->
-
-        <section id="about"
-            class="about section">
-
-            <div class="container about-grid">
-
-
-                <div class="about-image">
-
-                    <div class="image-placeholder">
-                        HOTEL EVENTO
-                    </div>
-
-                </div>
-
-
-                <div class="about-content">
-
-                    <p class="section-label">
-                        DISCOVER EVENTO
-                    </p>
-
-                    <h2>
-
-                        A Place to
-
-                        <span>
-                            Stay & Celebrate
-                        </span>
-
-                    </h2>
-
-
-                    <p>
-                        Welcome to Hotel Evento, a destination designed
-                        to bring together comfortable hospitality,
-                        delicious food and memorable moments.
-                    </p>
-
-
-                    <p>
-                        Whether you are visiting Washim, enjoying a meal
-                        with family or planning a special celebration,
-                        Hotel Evento is designed to make every experience
-                        comfortable and memorable.
-                    </p>
-
-
-                    <a href="#rooms"
-                        class="text-button">
-                        Discover More →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- FEATURES -->
-
-        <section class="features section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="section-label">
-                        THE EVENTO EXPERIENCE
-                    </p>
-
-                    <h2>
-                        Everything You Need
-                    </h2>
-
-                </div>
-
-
-                <div class="features-grid">
-
-
-                    <article class="feature-card">
-
-                        <span>01</span>
-
-                        <h3>
-                            Comfortable Rooms
-                        </h3>
-
-                        <p>
-                            Relax in a comfortable environment
-                            designed for a pleasant stay.
-                        </p>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <span>02</span>
-
-                        <h3>
-                            Fine Dining
-                        </h3>
-
-                        <p>
-                            Enjoy delicious food and a variety
-                            of dining choices.
-                        </p>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <span>03</span>
-
-                        <h3>
-                            Events & Celebrations
-                        </h3>
-
-                        <p>
-                            Create memorable moments for your
-                            special occasions.
-                        </p>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <span>04</span>
-
-                        <h3>
-                            Convenient Location
-                        </h3>
-
-                        <p>
-                            Conveniently located on Akola Road
-                            in Washim.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ROOMS -->
-
-        <section id="rooms"
-            class="rooms section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="section-label">
-                        STAY WITH US
-                    </p>
-
-                    <h2>
-                        Our Rooms
-                    </h2>
-
-                </div>
-
-
-                <div class="rooms-grid">
-
-
-                    <article class="room-card">
-
-                        <div class="room-image">
-                            <span>
-                                Room Image
-                            </span>
-                        </div>
-
-                        <div class="room-content">
-
-                            <p class="card-label">
-                                HOTEL EVENTO
-                            </p>
-
-                            <h3>
-                                Comfortable Stay
-                            </h3>
-
-                            <p>
-                                A welcoming space designed
-                                for a relaxing stay.
-                            </p>
-
-                            <a href="#contact">
-                                Enquire Now →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="room-card">
-
-                        <div class="room-image">
-                            <span>
-                                Room Image
-                            </span>
-                        </div>
-
-                        <div class="room-content">
-
-                            <p class="card-label">
-                                HOTEL EVENTO
-                            </p>
-
-                            <h3>
-                                Premium Stay
-                            </h3>
-
-                            <p>
-                                Enjoy a comfortable experience
-                                during your visit.
-                            </p>
-
-                            <a href="#contact">
-                                Enquire Now →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="room-card">
-
-                        <div class="room-image">
-                            <span>
-                                Room Image
-                            </span>
-                        </div>
-
-                        <div class="room-content">
-
-                            <p class="card-label">
-                                HOTEL EVENTO
-                            </p>
-
-                            <h3>
-                                Relax & Refresh
-                            </h3>
-
-                            <p>
-                                Designed for comfort after
-                                a busy day.
-                            </p>
-
-                            <a href="#contact">
-                                Enquire Now →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- RESTAURANT -->
-
-        <section id="restaurant"
-            class="restaurant section">
-
-            <div class="container restaurant-grid">
-
-
-                <div class="restaurant-content">
-
-                    <p class="section-label">
-                        DINE AT EVENTO
-                    </p>
-
-
-                    <h2>
-
-                        Delicious Food.
-
-                        <span>
-                            Memorable Moments.
-                        </span>
-
-                    </h2>
-
-
-                    <p>
-                        Discover a delicious selection of Indian,
-                        Chinese, Asian and Indo-Chinese flavours.
-                    </p>
-
-
-                    <a href="#menu"
-                        class="btn btn-primary">
-                        View Menu
-                    </a>
-
-                </div>
-
-
-                <div class="restaurant-image">
-
-                    <span>
-                        Food Photography
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- MENU -->
-
-        <section id="menu"
-            class="menu section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="section-label">
-                        OUR MENU
-                    </p>
-
-                    <h2>
-                        Something for Everyone
-                    </h2>
-
-                </div>
-
-
-                <div class="menu-grid">
-
-
-                    <article class="menu-item">
-
-                        <span>01</span>
-
-                        <h3>
-                            Starters
-                        </h3>
-
-                    </article>
-
-
-                    <article class="menu-item">
-
-                        <span>02</span>
-
-                        <h3>
-                            Main Course
-                        </h3>
-
-                    </article>
-
-
-                    <article class="menu-item">
-
-                        <span>03</span>
-
-                        <h3>
-                            Rice & Biryani
-                        </h3>
-
-                    </article>
-
-
-                    <article class="menu-item">
-
-                        <span>04</span>
-
-                        <h3>
-                            Chinese
-                        </h3>
-
-                    </article>
-
-
-                    <article class="menu-item">
-
-                        <span>05</span>
-
-                        <h3>
-                            Noodles
-                        </h3>
-
-                    </article>
-
-
-                    <article class="menu-item">
-
-                        <span>06</span>
-
-                        <h3>
-                            Snacks
-                        </h3>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- EVENTS -->
-
-        <section id="events"
-            class="events section">
-
-            <div class="events-overlay"></div>
-
-            <div class="container events-content">
-
-                <p class="section-label">
-                    CELEBRATE WITH US
-                </p>
-
-
-                <h2>
-
-                    Make Every
-
-                    <span>
-                        Moment Special
-                    </span>
-
-                </h2>
-
-
-                <p>
-                    From family celebrations to special occasions,
-                    create memorable moments at Hotel Evento.
-                </p>
-
-
-                <a href="#contact"
-                    class="btn btn-outline">
-                    Enquire Now
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- GALLERY -->
-
-        <section id="gallery"
-            class="gallery section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="section-label">
-                        OUR GALLERY
-                    </p>
-
-                    <h2>
-                        Moments at Evento
-                    </h2>
-
-                </div>
-
-
-                <div class="gallery-grid">
-
-                    <div class="gallery-item">
-                        <span>Hotel</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <span>Food</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <span>Restaurant</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <span>Rooms</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <span>Events</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <span>Experience</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- CONTACT -->
-
-        <section id="contact"
-            class="contact section">
-
-            <div class="container contact-grid">
-
-
-                <div class="contact-content">
-
-                    <p class="section-label">
-                        GET IN TOUCH
-                    </p>
-
-
-                    <h2>
-
-                        We'd Love to
-
-                        <span>
-                            Welcome You
-                        </span>
-
-                    </h2>
-
-
-                    <div class="contact-details">
-
-
-                        <div class="contact-detail">
-
-                            <small>
-                                ADDRESS
-                            </small>
-
-                            <p>
-                                Near Watane Lawns,<br>
-                                Akola Road, Washim,<br>
-                                Maharashtra 444505,<br>
-                                India
-                            </p>
-
-                        </div>
-
-
-                        <div class="contact-detail">
-
-                            <small>
-                                PHONE
-                            </small>
-
-                            <p>
-
-                                <a href="tel:+919858277700">
-                                    +91 98582 77700
-                                </a>
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="contact-detail">
-
-                            <small>
-                                OPENING HOURS
-                            </small>
-
-                            <p>
-                                [CLIENT TO CONFIRM]
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-actions">
-
-                        <a href="tel:+919858277700"
-                            class="contact-action">
-
-                            <span>☎</span>
-                            <span>Call</span>
-
-                        </a>
-
-
-                        <a href="https://wa.me/919858277700"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-action">
-
-                            <span>◉</span>
-                            <span>WhatsApp</span>
-
-                        </a>
-
-
-                        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Evento,+Near+Watane+Lawns,+Akola+Road,+Washim,+Maharashtra+444505"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-action">
-
-                            <span>⌖</span>
-                            <span>Directions</span>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- MAP -->
-
-                <div class="map-container">
-
-                    <iframe
-                        src="https://www.google.com/maps?q=Hotel+Evento,+Near+Watane+Lawns,+Akola+Road,+Washim,+Maharashtra+444505,+India&output=embed"
-                        title="Hotel Evento Location"
-                        loading="lazy"
-                        allowfullscreen
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- FINAL CTA -->
-
-        <section class="final-cta">
-
-            <div class="container">
-
-                <p class="section-label">
-                    HOTEL EVENTO
-                </p>
-
-
-                <h2>
-
-                    Your Next Experience
-
-                    <span>
-                        Awaits.
-                    </span>
-
-                </h2>
-
-
-                <div class="cta-buttons">
-
-                    <a href="tel:+919858277700"
-                        class="btn btn-primary">
-                        Call Now
-                    </a>
-
-
-                    <a href="https://wa.me/919858277700"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-outline">
-                        WhatsApp Us
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer class="footer">
-
-        <div class="container footer-grid">
-
-
-            <div class="footer-brand">
-
-                <a href="#home"
-                    class="logo">
-
-                    <span class="logo-small">
-                        HOTEL
-                    </span>
-
-                    <span class="logo-main">
-                        EVENTO
-                    </span>
-
-                </a>
-
-                <p>
-                    Stay. Dine. Celebrate.
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <h4>
-                    Quick Links
-                </h4>
-
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#rooms">Rooms</a>
-                <a href="#restaurant">Restaurant</a>
-                <a href="#events">Events</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact">Contact</a>
-
-            </div>
-
-
-            <div class="footer-contact">
-
-                <h4>
-                    Contact Info
-                </h4>
-
-                <p>
-                    Near Watane Lawns,<br>
-                    Akola Road, Washim,<br>
-                    Maharashtra 444505,<br>
-                    India
-                </p>
-
-                <p>
-
-                    <a href="tel:+919858277700">
-                        +91 98582 77700
-                    </a>
-
-                </p>
-
-            </div>
-
-
-            <div class="footer-social">
-
-                <h4>
-                    Follow Us
-                </h4>
-
-                <p>
-                    Stay connected for updates
-                    and offers.
-                </p>
-
-
-                <div class="social-links">
-
-                    <a href="#"
-                        aria-label="Facebook">
-                        f
-                    </a>
-
-                    <a href="#"
-                        aria-label="Instagram">
-                        ◎
-                    </a>
-
-                    <a href="https://wa.me/919858277700"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="WhatsApp">
-                        ◉
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <p>
-                © 2026 Hotel Evento. All Rights Reserved.
-            </p>
-
-        </div>
-
-    </footer>
-
-
-
-    <!-- =====================================================
-         JAVASCRIPT
-         ===================================================== -->
-
-    <script>
-
-        /* =================================================
-           MOBILE MENU
-           ================================================= */
-
-        const menuToggle =
-            document.querySelector(".menu-toggle");
-
-        const navMenu =
-            document.querySelector(".nav-menu");
-
-        const navLinks =
-            document.querySelectorAll(".nav-link");
-
-
-        if (menuToggle && navMenu) {
-
-            menuToggle.addEventListener(
-                "click",
-                () => {
-
-                    const isOpen =
-                        navMenu.classList.toggle("open");
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        isOpen
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-label",
-                        isOpen
-                            ? "Close navigation menu"
-                            : "Open navigation menu"
-                    );
-
-                }
-            );
-
-
-            navLinks.forEach(
-                (link) => {
-
-                    link.addEventListener(
-                        "click",
-                        () => {
-
-                            navMenu.classList.remove(
-                                "open"
-                            );
-
-                            menuToggle.setAttribute(
-                                "aria-expanded",
-                                "false"
-                            );
-
-                            menuToggle.setAttribute(
-                                "aria-label",
-                                "Open navigation menu"
-                            );
-
-                        }
-                    );
-
-                }
-            );
-
-        }
-
-
-        /* =================================================
-           ACTIVE NAVIGATION
-           ================================================= */
-
-        const sections =
-            document.querySelectorAll(
-                "main section[id]"
-            );
-
-
-        const observer =
-            new IntersectionObserver(
-                (entries) => {
-
-                    entries.forEach(
-                        (entry) => {
-
-                            if (entry.isIntersecting) {
-
-                                navLinks.forEach(
-                                    (link) => {
-
-                                        link.classList.remove(
-                                            "active"
-                                        );
-
-                                        if (
-                                            link.getAttribute(
-                                                "href"
-                                            ) ===
-                                            "#" + entry.target.id
-                                        ) {
-
-                                            link.classList.add(
-                                                "active"
-                                            );
-
-                                        }
-
-                                    }
-                                );
-
-                            }
-
-                        }
-                    );
-
-                },
-                {
-                    rootMargin:
-                        "-35% 0px -55% 0px"
-                }
-            );
-
-
-        sections.forEach(
-            (section) => observer.observe(section)
+    background:
+        linear-gradient(
+            90deg,
+            #111111 0%,
+            rgba(17, 17, 17, 0.75) 45%,
+            rgba(17, 17, 17, 0.35) 100%
         );
 
-
-        /* =================================================
-           CLOSE MENU WHEN CLICKING OUTSIDE
-           ================================================= */
-
-        document.addEventListener(
-            "click",
-            (event) => {
-
-                if (
-                    navMenu &&
-                    menuToggle &&
-                    navMenu.classList.contains("open") &&
-                    !navMenu.contains(event.target) &&
-                    !menuToggle.contains(event.target)
-                ) {
-
-                    navMenu.classList.remove("open");
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-label",
-                        "Open navigation menu"
-                    );
-
-                }
-
-            }
-        );
-
-    </script>
+    overflow: hidden;
+}
 
 
-</body>
+/*
+   Temporary background.
+   Replace with actual Hotel Evento photo later.
+*/
 
-</html>
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.8),
+            rgba(0,0,0,0.3)
+        ),
+        url("assets/images/hero/hotel-exterior.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    z-index: 0;
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 720px;
+
+    padding-top: 80px;
+}
+
+
+.hero-subtitle,
+.section-label {
+    color: var(--gold);
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 500;
+}
+
+
+.hero-subtitle {
+    margin-bottom: 20px;
+}
+
+
+.hero-title {
+    color: var(--white);
+
+    font-family: var(--heading);
+
+    font-size: clamp(65px, 8vw, 105px);
+
+    line-height: 0.9;
+
+    font-weight: 500;
+
+    margin-bottom: 30px;
+}
+
+
+.hero-title span,
+h2 span {
+    color: var(--gold);
+}
+
+
+.hero-description {
+    max-width: 550px;
+
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    margin-bottom: 38px;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.hero-buttons,
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+
+    padding: 14px 25px;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s;
+}
+
+
+.btn-primary {
+    background: var(--gold);
+
+    color: var(--black);
+}
+
+
+.btn-primary:hover {
+    background: white;
+}
+
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,0.6);
+
+    color: white;
+}
+
+
+.btn-outline:hover {
+    border-color: var(--gold);
+
+    color: var(--gold);
+}
+
+
+/* ================= SCROLL ================= */
+
+.scroll-indicator {
+    position: absolute;
+
+    right: 4%;
+
+    bottom: 40px;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    transform: rotate(90deg);
+
+    transform-origin: right;
+}
+
+
+.scroll-indicator span {
+    color: var(--light-text);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+.scroll-line {
+    width: 60px;
+
+    height: 1px;
+
+    background: var(--gold);
+}
+
+
+/* ================= QUICK ACTIONS ================= */
+
+.quick-actions {
+    background: var(--black);
+
+    border-bottom: 1px solid rgba(201,164,92,0.2);
+}
+
+
+.quick-actions-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+.quick-action {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 25px;
+
+    border-right: 1px solid rgba(255,255,255,0.08);
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+
+.quick-action:hover {
+    background: var(--dark-2);
+}
+
+
+.action-icon {
+    color: var(--gold);
+
+    font-size: 22px;
+}
+
+
+.quick-action small {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+.quick-action strong {
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 400;
+}
+
+
+/* ================= GENERAL SECTION ================= */
+
+.section {
+    padding: 110px 0;
+}
+
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+
+.section-heading h2,
+.about-content h2,
+.restaurant-content h2,
+.contact-content h2,
+.final-cta h2,
+.events-content h2 {
+    font-family: var(--heading);
+
+    font-weight: 500;
+
+    font-size: clamp(45px, 5vw, 70px);
+
+    line-height: 1;
+
+    margin-top: 15px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: var(--cream);
+}
+
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.about-image {
+    min-height: 600px;
+
+    background: #292929;
+}
+
+
+.image-placeholder {
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--gold);
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+}
+
+
+.about-content p:not(.section-label) {
+    color: var(--text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    margin-top: 25px;
+}
+
+
+.text-button {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    color: var(--gold-dark);
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================= FEATURES ================= */
+
+.features {
+    background: var(--black);
+
+    color: white;
+}
+
+
+.features-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1px;
+
+    background: #333;
+}
+
+
+.feature-card {
+    padding: 40px 30px;
+
+    background: var(--black);
+}
+
+
+.feature-card > span {
+    color: var(--gold);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.feature-card h3 {
+    font-family: var(--heading);
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    margin: 20px 0 12px;
+}
+
+
+.feature-card p {
+    color: #aaa;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* ================= ROOMS ================= */
+
+.rooms {
+    background: var(--cream);
+}
+
+
+.rooms-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.room-card {
+    background: white;
+}
+
+
+.room-image {
+    height: 280px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #292929;
+
+    color: var(--gold);
+
+    letter-spacing: 3px;
+
+    font-size: 10px;
+}
+
+
+.room-content {
+    padding: 30px;
+}
+
+
+.card-label {
+    color: var(--gold-dark);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.room-content h3 {
+    font-family: var(--heading);
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    margin: 10px 0;
+}
+
+
+.room-content p:not(.card-label) {
+    color: var(--text);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+.room-content a {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: var(--gold-dark);
+
+    font-size: 11px;
+}
+
+
+/* ================= RESTAURANT ================= */
+
+.restaurant {
+    background: var(--dark);
+
+    color: white;
+}
+
+
+.restaurant-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 600px;
+}
+
+
+.restaurant-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 70px;
+}
+
+
+.restaurant-content h2 {
+    margin-bottom: 30px;
+}
+
+
+.restaurant-content p:not(.section-label) {
+    color: #aaa;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    max-width: 500px;
+
+    margin-bottom: 35px;
+}
+
+
+.restaurant-image {
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #292929;
+
+    color: var(--gold);
+
+    letter-spacing: 3px;
+
+    font-size: 11px;
+}
+
+
+/* ================= MENU ================= */
+
+.menu {
+    background: var(--cream);
+}
+
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    background: #ddd;
+}
+
+
+.menu-item {
+    padding: 40px;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+
+.menu-item:hover {
+    background: var(--black);
+
+    color: white;
+}
+
+
+.menu-item span {
+    color: var(--gold);
+
+    font-size: 10px;
+}
+
+
+.menu-item h3 {
+    font-family: var(--heading);
+
+    font-size: 35px;
+
+    font-weight: 500;
+
+    margin-top: 15px;
+}
+
+
+/* ================= EVENTS ================= */
+
+.events {
+    position: relative;
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.7)
+        ),
+        url("assets/images/banquet/banquet-1.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.events-content {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    max-width: 750px;
+}
+
+
+.events-content p:not(.section-label) {
+    color: #ddd;
+
+    font-size: 14px;
+
+    max-width: 550px;
+
+    margin: 30px auto;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery {
+    background: var(--cream);
+}
+
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+
+.gallery-item {
+    height: 280px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #292929;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+
+.gallery-item:first-child {
+    height: 400px;
+}
+
+
+.gallery-item:nth-child(2) {
+    height: 400px;
+}
+
+
+.gallery-item:nth-child(3) {
+    height: 400px;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    background: var(--black);
+
+    color: white;
+}
+
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.contact-details {
+    margin-top: 40px;
+
+    display: grid;
+
+    gap: 25px;
+}
+
+
+.contact-details small {
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.contact-details p {
+    color: #aaa;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+
+.map-placeholder {
+    height: 500px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #292929;
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+/* ================= FINAL CTA ================= */
+
+.final-cta {
+    padding: 120px 0;
+
+    text-align: center;
+
+    background: var(--gold);
+
+    color: var(--black);
+}
+
+
+.final-cta .section-label {
+    color: var(--black);
+}
+
+
+.final-cta h2 {
+    margin-bottom: 40px;
+}
+
+
+.final-cta h2 span {
+    color: white;
+}
+
+
+.final-cta .btn-outline {
+    border-color: var(--black);
+
+    color: var(--black);
+}
+
+
+.final-cta .btn-outline:hover {
+    border-color: white;
+
+    color: white;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #0b0b0b;
+
+    color: white;
+
+    padding-top: 70px;
+}
+
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 60px;
+}
+
+
+.footer p {
+    color: #888;
+
+    font-size: 12px;
+
+    margin-top: 15px;
+}
+
+
+.footer h4 {
+    color: var(--gold);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+
+.footer-grid > div:nth-child(2) a {
+    display: block;
+
+    color: #999;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+
+.footer-bottom {
+    padding: 20px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    font-size: 10px;
+}
