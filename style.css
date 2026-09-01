@@ -1,1121 +1,1385 @@
-/* =====================================================
-   HOTEL EVENTO
-   Main Stylesheet
-   ===================================================== */
+<!DOCTYPE html>
+<html lang="en">
 
-:root {
-    --gold: #c9a45c;
-    --gold-dark: #a9823e;
+<head>
 
-    --black: #111111;
-    --dark: #181818;
-    --dark-2: #222222;
+    <meta charset="UTF-8">
 
-    --cream: #f7f4ed;
-    --white: #ffffff;
-    --text: #666666;
-    --light-text: #d7d7d7;
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
 
-    --heading: "Cormorant Garamond", serif;
-    --body: "Poppins", sans-serif;
+    <meta
+        name="description"
+        content="Hotel Evento — Stay, dine and celebrate in Washim, Maharashtra."
+    >
 
-    --container: 1200px;
-}
+    <meta
+        name="keywords"
+        content="Hotel Evento, Hotel in Washim, Restaurant in Washim, Events in Washim, Banquet Hall Washim"
+    >
 
+    <meta
+        name="author"
+        content="Hotel Evento"
+    >
 
-/* ================= RESET ================= */
+    <meta
+        name="theme-color"
+        content="#171717"
+    >
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <title>Hotel Evento | Stay. Dine. Celebrate.</title>
 
 
-html {
-    scroll-behavior: smooth;
-}
+    <!-- =====================================================
+         GOOGLE FONTS
+         ===================================================== -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-body {
-    font-family: var(--body);
-    background: var(--cream);
-    color: var(--black);
-    line-height: 1.6;
-}
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+    >
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
 
+    <!-- =====================================================
+         STYLESHEET
+         ===================================================== -->
 
-button {
-    font-family: inherit;
-}
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
+</head>
 
-img {
-    max-width: 100%;
-    display: block;
-}
 
+<body>
 
-/* ================= CONTAINER ================= */
 
-.container {
-    width: min(90%, var(--container));
-    margin: auto;
-}
+    <!-- =====================================================
+         HEADER / NAVIGATION
+         ===================================================== -->
 
+    <header class="navbar">
 
-/* ================= NAVBAR ================= */
+        <div class="container navbar-container">
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
 
-    background: rgba(17, 17, 17, 0.94);
+            <!-- LOGO -->
 
-    border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+            <a
+                href="#home"
+                class="logo"
+                aria-label="Hotel Evento Home"
+            >
 
-    backdrop-filter: blur(12px);
-}
+                <span class="logo-small">
+                    HOTEL
+                </span>
 
+                <span class="logo-main">
+                    EVENTO
+                </span>
 
-.navbar-container {
-    height: 82px;
+            </a>
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
+            <!-- DESKTOP / MOBILE NAVIGATION -->
 
-/* ================= LOGO ================= */
+            <nav
+                id="main-navigation"
+                class="nav-menu"
+                aria-label="Main Navigation"
+            >
 
-.logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
+                <a
+                    href="#home"
+                    class="nav-link active"
+                >
+                    Home
+                </a>
 
+                <a
+                    href="#about"
+                    class="nav-link"
+                >
+                    About
+                </a>
 
-.logo-small {
-    color: var(--gold);
+                <a
+                    href="#rooms"
+                    class="nav-link"
+                >
+                    Rooms
+                </a>
 
-    font-size: 9px;
+                <a
+                    href="#restaurant"
+                    class="nav-link"
+                >
+                    Restaurant
+                </a>
 
-    letter-spacing: 5px;
+                <a
+                    href="#events"
+                    class="nav-link"
+                >
+                    Events
+                </a>
 
-    margin-left: 3px;
-}
+                <a
+                    href="#gallery"
+                    class="nav-link"
+                >
+                    Gallery
+                </a>
 
+                <a
+                    href="#contact"
+                    class="nav-link"
+                >
+                    Contact
+                </a>
 
-.logo-main {
-    color: var(--white);
+            </nav>
 
-    font-family: var(--heading);
 
-    font-size: 30px;
+            <!-- MOBILE MENU BUTTON -->
 
-    font-weight: 600;
+            <button
+                type="button"
+                class="menu-toggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
 
-    letter-spacing: 4px;
+                <span></span>
+                <span></span>
+                <span></span>
 
-    margin-top: 5px;
-}
+            </button>
 
+        </div>
 
-/* ================= NAVIGATION ================= */
+    </header>
 
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
 
 
-.nav-link {
-    position: relative;
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
 
-    color: #d4d4d4;
+    <main>
 
-    font-size: 12px;
 
-    transition: 0.3s;
-}
+        <!-- =================================================
+             HERO
+             ================================================= -->
 
+        <section
+            id="home"
+            class="hero"
+        >
 
-.nav-link::after {
-    content: "";
+            <div class="hero-overlay"></div>
 
-    position: absolute;
 
-    left: 0;
-    bottom: -8px;
+            <div class="container hero-content">
 
-    width: 0;
-    height: 1px;
+                <p class="hero-subtitle">
+                    WELCOME TO HOTEL EVENTO
+                </p>
 
-    background: var(--gold);
 
-    transition: 0.3s;
-}
+                <h1 class="hero-title">
 
+                    Stay. Dine.
 
-.nav-link:hover,
-.nav-link.active {
-    color: var(--gold);
-}
+                    <span>
+                        Celebrate.
+                    </span>
 
+                </h1>
 
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
-}
 
+                <p class="hero-description">
 
-/* ================= NAV BUTTON ================= */
+                    Experience warm hospitality, comfortable stays
+                    and memorable dining in the heart of Washim.
 
-.nav-button {
-    padding: 11px 21px;
+                </p>
 
-    border: 1px solid var(--gold);
 
-    color: var(--gold);
+                <div class="hero-buttons">
 
-    font-size: 11px;
+                    <a
+                        href="#rooms"
+                        class="btn btn-primary"
+                    >
+                        Explore Hotel
+                    </a>
 
-    text-transform: uppercase;
 
-    letter-spacing: 1px;
+                    <a
+                        href="#restaurant"
+                        class="btn btn-outline"
+                    >
+                        Discover Dining
+                    </a>
 
-    transition: 0.3s;
-}
+                </div>
 
+            </div>
 
-.nav-button:hover {
-    background: var(--gold);
 
-    color: var(--black);
-}
+            <!-- SCROLL INDICATOR -->
 
+            <a
+                href="#about"
+                class="scroll-indicator"
+                aria-label="Scroll to About section"
+            >
 
-/* ================= MOBILE MENU ================= */
+                <span>
+                    SCROLL TO EXPLORE
+                </span>
 
-.menu-toggle {
-    display: none;
+                <span class="scroll-line"></span>
 
-    background: none;
+            </a>
 
-    border: none;
+        </section>
 
-    color: white;
 
-    font-size: 27px;
 
-    cursor: pointer;
-}
+        <!-- =================================================
+             QUICK ACTIONS
+             ================================================= -->
 
+        <section class="quick-actions">
 
-/* ================= HERO ================= */
+            <div class="container quick-actions-container">
 
-.hero {
-    position: relative;
 
-    min-height: 100vh;
+                <!-- CALL -->
 
-    display: flex;
-    align-items: center;
+                <a
+                    href="tel:+919858277700"
+                    class="quick-action"
+                >
 
-    background:
-        linear-gradient(
-            90deg,
-            #111111 0%,
-            rgba(17, 17, 17, 0.75) 45%,
-            rgba(17, 17, 17, 0.35) 100%
-        );
+                    <span
+                        class="action-icon"
+                        aria-hidden="true"
+                    >
+                        ☎
+                    </span>
 
-    overflow: hidden;
-}
+                    <span class="action-content">
 
+                        <small>
+                            CALL US
+                        </small>
 
-/*
-   Temporary background.
-   Replace with actual Hotel Evento photo later.
-*/
+                        <strong>
+                            Contact Hotel
+                        </strong>
 
-.hero::before {
-    content: "";
+                    </span>
 
-    position: absolute;
+                </a>
 
-    inset: 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,0.8),
-            rgba(0,0,0,0.3)
-        ),
-        url("assets/images/hero/hotel-exterior.jpg");
+                <!-- WHATSAPP -->
 
-    background-size: cover;
+                <a
+                    href="https://wa.me/919858277700"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="quick-action"
+                >
 
-    background-position: center;
+                    <span
+                        class="action-icon"
+                        aria-hidden="true"
+                    >
+                        ◉
+                    </span>
 
-    z-index: 0;
-}
+                    <span class="action-content">
 
+                        <small>
+                            WHATSAPP
+                        </small>
 
-.hero-content {
-    position: relative;
+                        <strong>
+                            Chat With Us
+                        </strong>
 
-    z-index: 2;
+                    </span>
 
-    max-width: 720px;
+                </a>
 
-    padding-top: 80px;
-}
 
+                <!-- LOCATION -->
 
-.hero-subtitle,
-.section-label {
-    color: var(--gold);
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Hotel+Evento,+Near+Watane+Lawns,+Akola+Road,+Washim,+Maharashtra+444505"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="quick-action"
+                >
 
-    font-size: 11px;
+                    <span
+                        class="action-icon"
+                        aria-hidden="true"
+                    >
+                        ⌖
+                    </span>
 
-    letter-spacing: 4px;
+                    <span class="action-content">
 
-    font-weight: 500;
-}
+                        <small>
+                            LOCATION
+                        </small>
 
+                        <strong>
+                            Get Directions
+                        </strong>
 
-.hero-subtitle {
-    margin-bottom: 20px;
-}
+                    </span>
 
+                </a>
 
-.hero-title {
-    color: var(--white);
 
-    font-family: var(--heading);
+                <!-- ENQUIRY -->
 
-    font-size: clamp(65px, 8vw, 105px);
+                <a
+                    href="#contact"
+                    class="quick-action"
+                >
 
-    line-height: 0.9;
+                    <span
+                        class="action-icon"
+                        aria-hidden="true"
+                    >
+                        ✦
+                    </span>
 
-    font-weight: 500;
+                    <span class="action-content">
 
-    margin-bottom: 30px;
-}
+                        <small>
+                            ENQUIRY
+                        </small>
 
+                        <strong>
+                            Make an Enquiry
+                        </strong>
 
-.hero-title span,
-h2 span {
-    color: var(--gold);
-}
+                    </span>
 
+                </a>
 
-.hero-description {
-    max-width: 550px;
+            </div>
 
-    color: var(--light-text);
+        </section>
 
-    font-size: 14px;
 
-    line-height: 1.9;
 
-    margin-bottom: 38px;
-}
+        <!-- =================================================
+             ABOUT
+             ================================================= -->
 
+        <section
+            id="about"
+            class="about section"
+        >
 
-/* ================= BUTTONS ================= */
+            <div class="container about-grid">
 
-.hero-buttons,
-.cta-buttons {
-    display: flex;
-    gap: 15px;
-}
 
+                <div class="about-image">
 
-.btn {
-    display: inline-flex;
+                    <div class="image-placeholder">
 
-    align-items: center;
-    justify-content: center;
+                        <span>
+                            HOTEL EVENTO
+                        </span>
 
-    min-width: 160px;
+                    </div>
 
-    padding: 14px 25px;
+                </div>
 
-    font-size: 11px;
 
-    text-transform: uppercase;
+                <div class="about-content">
 
-    letter-spacing: 1.5px;
+                    <p class="section-label">
+                        DISCOVER EVENTO
+                    </p>
 
-    transition: 0.3s;
-}
 
+                    <h2>
 
-.btn-primary {
-    background: var(--gold);
+                        A Place to
 
-    color: var(--black);
-}
+                        <span>
+                            Stay & Celebrate
+                        </span>
 
+                    </h2>
 
-.btn-primary:hover {
-    background: white;
-}
 
+                    <p>
 
-.btn-outline {
-    border: 1px solid rgba(255,255,255,0.6);
+                        Welcome to Hotel Evento, a destination designed
+                        to bring together comfortable hospitality,
+                        delicious food and memorable moments.
 
-    color: white;
-}
+                    </p>
 
 
-.btn-outline:hover {
-    border-color: var(--gold);
+                    <p>
 
-    color: var(--gold);
-}
+                        Whether you are visiting Washim, enjoying a meal
+                        with family or planning a special celebration,
+                        Hotel Evento is designed to make every experience
+                        comfortable and memorable.
 
+                    </p>
 
-/* ================= SCROLL ================= */
 
-.scroll-indicator {
-    position: absolute;
+                    <a
+                        href="#rooms"
+                        class="text-button"
+                    >
+                        Discover More →
+                    </a>
 
-    right: 4%;
+                </div>
 
-    bottom: 40px;
+            </div>
 
-    z-index: 2;
+        </section>
 
-    display: flex;
 
-    align-items: center;
 
-    gap: 15px;
+        <!-- =================================================
+             FEATURES
+             ================================================= -->
 
-    transform: rotate(90deg);
+        <section class="features section">
 
-    transform-origin: right;
-}
+            <div class="container">
 
+                <div class="section-heading">
 
-.scroll-indicator span {
-    color: var(--light-text);
+                    <p class="section-label">
+                        THE EVENTO EXPERIENCE
+                    </p>
 
-    font-size: 8px;
+                    <h2>
+                        Everything You Need
+                    </h2>
 
-    letter-spacing: 3px;
-}
+                </div>
 
 
-.scroll-line {
-    width: 60px;
+                <div class="features-grid">
 
-    height: 1px;
 
-    background: var(--gold);
-}
+                    <article class="feature-card">
 
+                        <span>
+                            01
+                        </span>
 
-/* ================= QUICK ACTIONS ================= */
+                        <h3>
+                            Comfortable Rooms
+                        </h3>
 
-.quick-actions {
-    background: var(--black);
+                        <p>
+                            Relax in a comfortable environment
+                            designed for a pleasant stay.
+                        </p>
 
-    border-bottom: 1px solid rgba(201,164,92,0.2);
-}
+                    </article>
 
 
-.quick-actions-container {
-    display: grid;
+                    <article class="feature-card">
 
-    grid-template-columns: repeat(4, 1fr);
-}
+                        <span>
+                            02
+                        </span>
 
+                        <h3>
+                            Fine Dining
+                        </h3>
 
-.quick-action {
-    display: flex;
+                        <p>
+                            Enjoy delicious food and a variety
+                            of dining choices.
+                        </p>
 
-    align-items: center;
+                    </article>
 
-    gap: 15px;
 
-    padding: 25px;
+                    <article class="feature-card">
 
-    border-right: 1px solid rgba(255,255,255,0.08);
+                        <span>
+                            03
+                        </span>
 
-    color: white;
+                        <h3>
+                            Events & Celebrations
+                        </h3>
 
-    transition: 0.3s;
-}
+                        <p>
+                            Create memorable moments for your
+                            special occasions.
+                        </p>
 
+                    </article>
 
-.quick-action:hover {
-    background: var(--dark-2);
-}
 
+                    <article class="feature-card">
 
-.action-icon {
-    color: var(--gold);
+                        <span>
+                            04
+                        </span>
 
-    font-size: 22px;
-}
+                        <h3>
+                            Convenient Location
+                        </h3>
 
+                        <p>
+                            Conveniently located on Akola Road
+                            in Washim.
+                        </p>
 
-.quick-action small {
-    display: block;
+                    </article>
 
-    color: var(--gold);
+                </div>
 
-    font-size: 8px;
+            </div>
 
-    letter-spacing: 2px;
-}
+        </section>
 
 
-.quick-action strong {
-    display: block;
 
-    font-size: 12px;
+        <!-- =================================================
+             ROOMS
+             ================================================= -->
 
-    font-weight: 400;
-}
+        <section
+            id="rooms"
+            class="rooms section"
+        >
 
+            <div class="container">
 
-/* ================= GENERAL SECTION ================= */
+                <div class="section-heading">
 
-.section {
-    padding: 110px 0;
-}
+                    <p class="section-label">
+                        STAY WITH US
+                    </p>
 
+                    <h2>
+                        Our Rooms
+                    </h2>
 
-.section-heading {
-    text-align: center;
+                </div>
 
-    margin-bottom: 55px;
-}
 
+                <div class="rooms-grid">
 
-.section-heading h2,
-.about-content h2,
-.restaurant-content h2,
-.contact-content h2,
-.final-cta h2,
-.events-content h2 {
-    font-family: var(--heading);
 
-    font-weight: 500;
+                    <article class="room-card">
 
-    font-size: clamp(45px, 5vw, 70px);
+                        <div class="room-image">
 
-    line-height: 1;
+                            <span>
+                                Room Image
+                            </span>
 
-    margin-top: 15px;
-}
+                        </div>
 
 
-/* ================= ABOUT ================= */
+                        <div class="room-content">
 
-.about {
-    background: var(--cream);
-}
+                            <p class="card-label">
+                                HOTEL EVENTO
+                            </p>
 
+                            <h3>
+                                Comfortable Stay
+                            </h3>
 
-.about-grid {
-    display: grid;
+                            <p>
+                                A welcoming space designed
+                                for a relaxing stay.
+                            </p>
 
-    grid-template-columns: 1fr 1fr;
+                            <a href="#contact">
+                                Enquire Now →
+                            </a>
 
-    gap: 80px;
+                        </div>
 
-    align-items: center;
-}
+                    </article>
 
 
-.about-image {
-    min-height: 600px;
+                    <article class="room-card">
 
-    background: #292929;
-}
+                        <div class="room-image">
 
+                            <span>
+                                Room Image
+                            </span>
 
-.image-placeholder {
-    height: 100%;
+                        </div>
 
-    display: flex;
 
-    align-items: center;
-    justify-content: center;
+                        <div class="room-content">
 
-    color: var(--gold);
+                            <p class="card-label">
+                                HOTEL EVENTO
+                            </p>
 
-    letter-spacing: 4px;
+                            <h3>
+                                Premium Stay
+                            </h3>
 
-    font-size: 12px;
-}
+                            <p>
+                                Enjoy a comfortable experience
+                                during your visit.
+                            </p>
 
+                            <a href="#contact">
+                                Enquire Now →
+                            </a>
 
-.about-content p:not(.section-label) {
-    color: var(--text);
+                        </div>
 
-    font-size: 14px;
+                    </article>
 
-    line-height: 1.9;
 
-    margin-top: 25px;
-}
+                    <article class="room-card">
 
+                        <div class="room-image">
 
-.text-button {
-    display: inline-block;
+                            <span>
+                                Room Image
+                            </span>
 
-    margin-top: 30px;
+                        </div>
 
-    color: var(--gold-dark);
 
-    font-size: 12px;
+                        <div class="room-content">
 
-    letter-spacing: 1px;
-}
+                            <p class="card-label">
+                                HOTEL EVENTO
+                            </p>
 
+                            <h3>
+                                Relax & Refresh
+                            </h3>
 
-/* ================= FEATURES ================= */
+                            <p>
+                                Designed for comfort after
+                                a busy day.
+                            </p>
 
-.features {
-    background: var(--black);
+                            <a href="#contact">
+                                Enquire Now →
+                            </a>
 
-    color: white;
-}
+                        </div>
 
+                    </article>
 
-.features-grid {
-    display: grid;
+                </div>
 
-    grid-template-columns: repeat(4, 1fr);
+            </div>
 
-    gap: 1px;
+        </section>
 
-    background: #333;
-}
 
 
-.feature-card {
-    padding: 40px 30px;
+        <!-- =================================================
+             RESTAURANT
+             ================================================= -->
 
-    background: var(--black);
-}
+        <section
+            id="restaurant"
+            class="restaurant section"
+        >
 
+            <div class="container restaurant-grid">
 
-.feature-card > span {
-    color: var(--gold);
 
-    font-size: 11px;
+                <div class="restaurant-content">
 
-    letter-spacing: 2px;
-}
+                    <p class="section-label">
+                        DINE AT EVENTO
+                    </p>
 
 
-.feature-card h3 {
-    font-family: var(--heading);
+                    <h2>
 
-    font-size: 30px;
+                        Delicious Food.
 
-    font-weight: 500;
+                        <span>
+                            Memorable Moments.
+                        </span>
 
-    margin: 20px 0 12px;
-}
+                    </h2>
 
 
-.feature-card p {
-    color: #aaa;
+                    <p>
 
-    font-size: 12px;
+                        Discover a delicious selection of Indian,
+                        Chinese, Asian and Indo-Chinese flavours.
 
-    line-height: 1.8;
-}
+                    </p>
 
 
-/* ================= ROOMS ================= */
+                    <a
+                        href="#menu"
+                        class="btn btn-primary"
+                    >
+                        View Menu
+                    </a>
 
-.rooms {
-    background: var(--cream);
-}
+                </div>
 
 
-.rooms-grid {
-    display: grid;
+                <div class="restaurant-image">
 
-    grid-template-columns: repeat(3, 1fr);
+                    <span>
+                        Food Photography
+                    </span>
 
-    gap: 25px;
-}
+                </div>
 
+            </div>
 
-.room-card {
-    background: white;
-}
+        </section>
 
 
-.room-image {
-    height: 280px;
 
-    display: flex;
+        <!-- =================================================
+             MENU
+             ================================================= -->
 
-    align-items: center;
-    justify-content: center;
+        <section
+            id="menu"
+            class="menu section"
+        >
 
-    background: #292929;
+            <div class="container">
 
-    color: var(--gold);
+                <div class="section-heading">
 
-    letter-spacing: 3px;
+                    <p class="section-label">
+                        OUR MENU
+                    </p>
 
-    font-size: 10px;
-}
+                    <h2>
+                        Something for Everyone
+                    </h2>
 
+                </div>
 
-.room-content {
-    padding: 30px;
-}
 
+                <div class="menu-grid">
 
-.card-label {
-    color: var(--gold-dark);
 
-    font-size: 9px;
+                    <article class="menu-item">
 
-    letter-spacing: 2px;
-}
+                        <span>01</span>
 
+                        <h3>
+                            Starters
+                        </h3>
 
-.room-content h3 {
-    font-family: var(--heading);
+                    </article>
 
-    font-size: 34px;
 
-    font-weight: 500;
+                    <article class="menu-item">
 
-    margin: 10px 0;
-}
+                        <span>02</span>
 
+                        <h3>
+                            Main Course
+                        </h3>
 
-.room-content p:not(.card-label) {
-    color: var(--text);
+                    </article>
 
-    font-size: 12px;
 
-    line-height: 1.8;
-}
+                    <article class="menu-item">
 
+                        <span>03</span>
 
-.room-content a {
-    display: inline-block;
+                        <h3>
+                            Rice & Biryani
+                        </h3>
 
-    margin-top: 20px;
+                    </article>
 
-    color: var(--gold-dark);
 
-    font-size: 11px;
-}
+                    <article class="menu-item">
 
+                        <span>04</span>
 
-/* ================= RESTAURANT ================= */
+                        <h3>
+                            Chinese
+                        </h3>
 
-.restaurant {
-    background: var(--dark);
+                    </article>
 
-    color: white;
-}
 
+                    <article class="menu-item">
 
-.restaurant-grid {
-    display: grid;
+                        <span>05</span>
 
-    grid-template-columns: 1fr 1fr;
+                        <h3>
+                            Noodles
+                        </h3>
 
-    min-height: 600px;
-}
+                    </article>
 
 
-.restaurant-content {
-    display: flex;
+                    <article class="menu-item">
 
-    flex-direction: column;
+                        <span>06</span>
 
-    justify-content: center;
+                        <h3>
+                            Snacks
+                        </h3>
 
-    padding: 70px;
-}
+                    </article>
 
+                </div>
 
-.restaurant-content h2 {
-    margin-bottom: 30px;
-}
+            </div>
 
+        </section>
 
-.restaurant-content p:not(.section-label) {
-    color: #aaa;
 
-    font-size: 14px;
 
-    line-height: 1.9;
+        <!-- =================================================
+             EVENTS
+             ================================================= -->
 
-    max-width: 500px;
+        <section
+            id="events"
+            class="events section"
+        >
 
-    margin-bottom: 35px;
-}
+            <div class="events-overlay"></div>
 
 
-.restaurant-image {
-    min-height: 600px;
+            <div class="container events-content">
 
-    display: flex;
+                <p class="section-label">
+                    CELEBRATE WITH US
+                </p>
 
-    align-items: center;
-    justify-content: center;
 
-    background: #292929;
+                <h2>
 
-    color: var(--gold);
+                    Make Every
 
-    letter-spacing: 3px;
+                    <span>
+                        Moment Special
+                    </span>
 
-    font-size: 11px;
-}
+                </h2>
 
 
-/* ================= MENU ================= */
+                <p>
 
-.menu {
-    background: var(--cream);
-}
+                    From family celebrations to special occasions,
+                    create memorable moments at Hotel Evento.
 
+                </p>
 
-.menu-grid {
-    display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+                <a
+                    href="#contact"
+                    class="btn btn-outline"
+                >
+                    Enquire Now
+                </a>
 
-    gap: 1px;
+            </div>
 
-    background: #ddd;
-}
+        </section>
 
 
-.menu-item {
-    padding: 40px;
 
-    background: white;
+        <!-- =================================================
+             GALLERY
+             ================================================= -->
 
-    transition: 0.3s;
-}
+        <section
+            id="gallery"
+            class="gallery section"
+        >
 
+            <div class="container">
 
-.menu-item:hover {
-    background: var(--black);
+                <div class="section-heading">
 
-    color: white;
-}
+                    <p class="section-label">
+                        OUR GALLERY
+                    </p>
 
+                    <h2>
+                        Moments at Evento
+                    </h2>
 
-.menu-item span {
-    color: var(--gold);
+                </div>
 
-    font-size: 10px;
-}
 
+                <div class="gallery-grid">
 
-.menu-item h3 {
-    font-family: var(--heading);
 
-    font-size: 35px;
+                    <div class="gallery-item">
+                        <span>Hotel</span>
+                    </div>
 
-    font-weight: 500;
 
-    margin-top: 15px;
-}
+                    <div class="gallery-item">
+                        <span>Food</span>
+                    </div>
 
 
-/* ================= EVENTS ================= */
+                    <div class="gallery-item">
+                        <span>Restaurant</span>
+                    </div>
 
-.events {
-    position: relative;
 
-    min-height: 650px;
+                    <div class="gallery-item">
+                        <span>Rooms</span>
+                    </div>
 
-    display: flex;
 
-    align-items: center;
+                    <div class="gallery-item">
+                        <span>Events</span>
+                    </div>
 
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.7),
-            rgba(0,0,0,0.7)
-        ),
-        url("assets/images/banquet/banquet-1.jpg");
 
-    background-size: cover;
+                    <div class="gallery-item">
+                        <span>Experience</span>
+                    </div>
 
-    background-position: center;
-}
 
+                </div>
 
-.events-content {
-    position: relative;
+            </div>
 
-    z-index: 2;
+        </section>
 
-    text-align: center;
 
-    max-width: 750px;
-}
 
+        <!-- =================================================
+             CONTACT
+             ================================================= -->
 
-.events-content p:not(.section-label) {
-    color: #ddd;
+        <section
+            id="contact"
+            class="contact section"
+        >
 
-    font-size: 14px;
+            <div class="container contact-grid">
 
-    max-width: 550px;
 
-    margin: 30px auto;
-}
+                <!-- CONTACT INFORMATION -->
 
+                <div class="contact-content">
 
-/* ================= GALLERY ================= */
+                    <p class="section-label">
+                        GET IN TOUCH
+                    </p>
 
-.gallery {
-    background: var(--cream);
-}
 
+                    <h2>
 
-.gallery-grid {
-    display: grid;
+                        We'd Love to
 
-    grid-template-columns: repeat(3, 1fr);
+                        <span>
+                            Welcome You
+                        </span>
 
-    gap: 10px;
-}
+                    </h2>
 
 
-.gallery-item {
-    height: 280px;
+                    <div class="contact-details">
 
-    display: flex;
 
-    align-items: center;
-    justify-content: center;
+                        <div class="contact-detail">
 
-    background: #292929;
+                            <small>
+                                ADDRESS
+                            </small>
 
-    color: var(--gold);
+                            <p>
+                                Near Watane Lawns,<br>
+                                Akola Road, Washim,<br>
+                                Maharashtra 444505,<br>
+                                India
+                            </p>
 
-    font-size: 10px;
+                        </div>
 
-    letter-spacing: 3px;
-}
 
+                        <div class="contact-detail">
 
-.gallery-item:first-child {
-    height: 400px;
-}
+                            <small>
+                                PHONE
+                            </small>
 
+                            <p>
 
-.gallery-item:nth-child(2) {
-    height: 400px;
-}
+                                <a href="tel:+919858277700">
+                                    +91 98582 77700
+                                </a>
 
+                            </p>
 
-.gallery-item:nth-child(3) {
-    height: 400px;
-}
+                        </div>
 
 
-/* ================= CONTACT ================= */
+                        <div class="contact-detail">
 
-.contact {
-    background: var(--black);
+                            <small>
+                                OPENING HOURS
+                            </small>
 
-    color: white;
-}
+                            <p>
+                                [CLIENT TO CONFIRM]
+                            </p>
 
+                        </div>
 
-.contact-grid {
-    display: grid;
+                    </div>
 
-    grid-template-columns: 1fr 1fr;
 
-    gap: 80px;
+                    <!-- CONTACT BUTTONS -->
 
-    align-items: center;
-}
+                    <div class="contact-actions">
 
 
-.contact-details {
-    margin-top: 40px;
+                        <a
+                            href="tel:+919858277700"
+                            class="contact-action"
+                        >
 
-    display: grid;
+                            <span aria-hidden="true">
+                                ☎
+                            </span>
 
-    gap: 25px;
-}
+                            <span>
+                                Call
+                            </span>
 
+                        </a>
 
-.contact-details small {
-    color: var(--gold);
 
-    font-size: 9px;
+                        <a
+                            href="https://wa.me/919858277700"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-action"
+                        >
 
-    letter-spacing: 2px;
-}
+                            <span aria-hidden="true">
+                                ◉
+                            </span>
 
+                            <span>
+                                WhatsApp
+                            </span>
 
-.contact-details p {
-    color: #aaa;
+                        </a>
 
-    font-size: 13px;
 
-    margin-top: 5px;
-}
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Hotel+Evento,+Near+Watane+Lawns,+Akola+Road,+Washim,+Maharashtra+444505"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-action"
+                        >
 
+                            <span aria-hidden="true">
+                                ⌖
+                            </span>
 
-.map-placeholder {
-    height: 500px;
+                            <span>
+                                Directions
+                            </span>
 
-    display: flex;
+                        </a>
 
-    align-items: center;
-    justify-content: center;
+                    </div>
 
-    background: #292929;
+                </div>
 
-    color: var(--gold);
 
-    font-size: 11px;
 
-    letter-spacing: 3px;
-}
+                <!-- GOOGLE MAP -->
 
+                <div class="map-container">
 
-/* ================= FINAL CTA ================= */
+                    <iframe
+                        src="https://www.google.com/maps?q=Hotel+Evento,+Near+Watane+Lawns,+Akola+Road,+Washim,+Maharashtra+444505,+India&output=embed"
+                        title="Hotel Evento Location"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
 
-.final-cta {
-    padding: 120px 0;
+                </div>
 
-    text-align: center;
+            </div>
 
-    background: var(--gold);
+        </section>
 
-    color: var(--black);
-}
 
 
-.final-cta .section-label {
-    color: var(--black);
-}
+        <!-- =================================================
+             FINAL CTA
+             ================================================= -->
 
+        <section class="final-cta">
 
-.final-cta h2 {
-    margin-bottom: 40px;
-}
+            <div class="container">
 
+                <p class="section-label">
+                    HOTEL EVENTO
+                </p>
 
-.final-cta h2 span {
-    color: white;
-}
 
+                <h2>
 
-.final-cta .btn-outline {
-    border-color: var(--black);
+                    Your Next Experience
 
-    color: var(--black);
-}
+                    <span>
+                        Awaits.
+                    </span>
 
+                </h2>
 
-.final-cta .btn-outline:hover {
-    border-color: white;
 
-    color: white;
-}
+                <div class="cta-buttons">
 
+                    <a
+                        href="tel:+919858277700"
+                        class="btn btn-primary"
+                    >
+                        Call Now
+                    </a>
 
-/* ================= FOOTER ================= */
 
-.footer {
-    background: #0b0b0b;
+                    <a
+                        href="https://wa.me/919858277700"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-outline"
+                    >
+                        WhatsApp Us
+                    </a>
 
-    color: white;
+                </div>
 
-    padding-top: 70px;
-}
+            </div>
 
+        </section>
 
-.footer-grid {
-    display: grid;
+    </main>
 
-    grid-template-columns: 2fr 1fr 1fr;
 
-    gap: 50px;
 
-    padding-bottom: 60px;
-}
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
 
+    <footer class="footer">
 
-.footer p {
-    color: #888;
+        <div class="container footer-grid">
 
-    font-size: 12px;
 
-    margin-top: 15px;
-}
+            <!-- BRAND -->
 
+            <div class="footer-brand">
 
-.footer h4 {
-    color: var(--gold);
+                <a
+                    href="#home"
+                    class="logo"
+                >
 
-    font-size: 11px;
+                    <span class="logo-small">
+                        HOTEL
+                    </span>
 
-    letter-spacing: 2px;
+                    <span class="logo-main">
+                        EVENTO
+                    </span>
 
-    margin-bottom: 20px;
-}
+                </a>
 
 
-.footer-grid > div:nth-child(2) a {
-    display: block;
+                <p>
+                    Stay. Dine. Celebrate.
+                </p>
 
-    color: #999;
+            </div>
 
-    font-size: 12px;
 
-    margin-bottom: 10px;
-}
+            <!-- QUICK LINKS -->
 
+            <div class="footer-links">
 
-.footer-bottom {
-    padding: 20px;
+                <h4>
+                    Quick Links
+                </h4>
 
-    text-align: center;
+                <a href="#home">
+                    Home
+                </a>
 
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
+                <a href="#about">
+                    About
+                </a>
 
+                <a href="#rooms">
+                    Rooms
+                </a>
 
-.footer-bottom p {
-    margin: 0;
+                <a href="#restaurant">
+                    Restaurant
+                </a>
 
-    font-size: 10px;
-}
+                <a href="#events">
+                    Events
+                </a>
+
+                <a href="#gallery">
+                    Gallery
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-contact">
+
+                <h4>
+                    Contact Info
+                </h4>
+
+                <p>
+                    Near Watane Lawns,<br>
+                    Akola Road, Washim,<br>
+                    Maharashtra 444505,<br>
+                    India
+                </p>
+
+                <p>
+
+                    <a href="tel:+919858277700">
+                        +91 98582 77700
+                    </a>
+
+                </p>
+
+            </div>
+
+
+            <!-- SOCIAL -->
+
+            <div class="footer-social">
+
+                <h4>
+                    Follow Us
+                </h4>
+
+                <p>
+                    Stay connected for updates
+                    and offers.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        f
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+                        ◎
+                    </a>
+
+
+                    <a
+                        href="https://wa.me/919858277700"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp"
+                    >
+                        ◉
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- COPYRIGHT -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Hotel Evento. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
