@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +49,7 @@
 
             <!-- HOTEL LOGO -->
 
-            <a href="#home" class="logo">
+            <a href="#home" class="logo" aria-label="Hotel Evento Home">
 
                 <span class="logo-small">
                     HOTEL
@@ -98,18 +97,20 @@
             </nav>
 
 
-            <!-- MOBILE MENU -->
+            <!-- MOBILE MENU BUTTON -->
 
             <button
                 class="menu-toggle"
                 type="button"
                 aria-label="Open navigation menu"
-                aria-expanded="false">
+                aria-expanded="false"
+                aria-controls="main-navigation">
 
-                ☰
+                <span></span>
+                <span></span>
+                <span></span>
 
             </button>
-
 
         </div>
 
@@ -185,7 +186,7 @@
 
             <!-- SCROLL INDICATOR -->
 
-            <div class="scroll-indicator">
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to explore">
 
                 <span>
                     SCROLL TO EXPLORE
@@ -193,7 +194,7 @@
 
                 <div class="scroll-line"></div>
 
-            </div>
+            </a>
 
         </section>
 
@@ -214,7 +215,7 @@
                     href="tel:+919858277700"
                     class="quick-action">
 
-                    <span class="action-icon">
+                    <span class="action-icon" aria-hidden="true">
                         ☎
                     </span>
 
@@ -241,7 +242,7 @@
                     rel="noopener noreferrer"
                     class="quick-action">
 
-                    <span class="action-icon">
+                    <span class="action-icon" aria-hidden="true">
                         ◉
                     </span>
 
@@ -268,7 +269,7 @@
                     rel="noopener noreferrer"
                     class="quick-action">
 
-                    <span class="action-icon">
+                    <span class="action-icon" aria-hidden="true">
                         ⌖
                     </span>
 
@@ -293,7 +294,7 @@
                     href="#contact"
                     class="quick-action">
 
-                    <span class="action-icon">
+                    <span class="action-icon" aria-hidden="true">
                         ✦
                     </span>
 
@@ -335,7 +336,9 @@
 
                     <div class="image-placeholder">
 
-                        HOTEL EVENTO
+                        <span>
+                            HOTEL EVENTO
+                        </span>
 
                     </div>
 
@@ -425,7 +428,7 @@
 
                     <!-- FEATURE 01 -->
 
-                    <div class="feature-card">
+                    <article class="feature-card">
 
                         <span>
                             01
@@ -442,12 +445,12 @@
 
                         </p>
 
-                    </div>
+                    </article>
 
 
                     <!-- FEATURE 02 -->
 
-                    <div class="feature-card">
+                    <article class="feature-card">
 
                         <span>
                             02
@@ -464,12 +467,12 @@
 
                         </p>
 
-                    </div>
+                    </article>
 
 
                     <!-- FEATURE 03 -->
 
-                    <div class="feature-card">
+                    <article class="feature-card">
 
                         <span>
                             03
@@ -486,12 +489,12 @@
 
                         </p>
 
-                    </div>
+                    </article>
 
 
                     <!-- FEATURE 04 -->
 
-                    <div class="feature-card">
+                    <article class="feature-card">
 
                         <span>
                             04
@@ -508,7 +511,7 @@
 
                         </p>
 
-                    </div>
+                    </article>
 
 
                 </div>
@@ -551,7 +554,11 @@
                     <article class="room-card">
 
                         <div class="room-image">
-                            Room Image
+
+                            <span>
+                                Room Image
+                            </span>
+
                         </div>
 
 
@@ -589,7 +596,11 @@
                     <article class="room-card">
 
                         <div class="room-image">
-                            Room Image
+
+                            <span>
+                                Room Image
+                            </span>
+
                         </div>
 
 
@@ -627,7 +638,11 @@
                     <article class="room-card">
 
                         <div class="room-image">
-                            Room Image
+
+                            <span>
+                                Room Image
+                            </span>
+
                         </div>
 
 
@@ -718,7 +733,9 @@
 
                 <div class="restaurant-image">
 
-                    Food Photography
+                    <span>
+                        Food Photography
+                    </span>
 
                 </div>
 
@@ -756,7 +773,7 @@
                 <div class="menu-grid">
 
 
-                    <div class="menu-item">
+                    <article class="menu-item">
 
                         <span>
                             01
@@ -766,10 +783,10 @@
                             Starters
                         </h3>
 
-                    </div>
+                    </article>
 
 
-                    <div class="menu-item">
+                    <article class="menu-item">
 
                         <span>
                             02
@@ -779,10 +796,10 @@
                             Main Course
                         </h3>
 
-                    </div>
+                    </article>
 
 
-                    <div class="menu-item">
+                    <article class="menu-item">
 
                         <span>
                             03
@@ -792,10 +809,10 @@
                             Rice & Biryani
                         </h3>
 
-                    </div>
+                    </article>
 
 
-                    <div class="menu-item">
+                    <article class="menu-item">
 
                         <span>
                             04
@@ -805,10 +822,10 @@
                             Chinese
                         </h3>
 
-                    </div>
+                    </article>
 
 
-                    <div class="menu-item">
+                    <article class="menu-item">
 
                         <span>
                             05
@@ -818,10 +835,10 @@
                             Noodles
                         </h3>
 
-                    </div>
+                    </article>
 
 
-                    <div class="menu-item">
+                    <article class="menu-item">
 
                         <span>
                             06
@@ -831,7 +848,7 @@
                             Snacks
                         </h3>
 
-                    </div>
+                    </article>
 
 
                 </div>
@@ -924,32 +941,32 @@
 
 
                     <div class="gallery-item">
-                        Hotel
+                        <span>Hotel</span>
                     </div>
 
 
                     <div class="gallery-item">
-                        Food
+                        <span>Food</span>
                     </div>
 
 
                     <div class="gallery-item">
-                        Restaurant
+                        <span>Restaurant</span>
                     </div>
 
 
                     <div class="gallery-item">
-                        Rooms
+                        <span>Rooms</span>
                     </div>
 
 
                     <div class="gallery-item">
-                        Events
+                        <span>Events</span>
                     </div>
 
 
                     <div class="gallery-item">
-                        Experience
+                        <span>Experience</span>
                     </div>
 
 
@@ -998,7 +1015,7 @@
 
                         <!-- ADDRESS -->
 
-                        <div>
+                        <div class="contact-detail">
 
                             <small>
                                 ADDRESS
@@ -1018,7 +1035,7 @@
 
                         <!-- PHONE -->
 
-                        <div>
+                        <div class="contact-detail">
 
                             <small>
                                 PHONE
@@ -1037,7 +1054,7 @@
 
                         <!-- OPENING HOURS -->
 
-                        <div>
+                        <div class="contact-detail">
 
                             <small>
                                 OPENING HOURS
@@ -1062,7 +1079,10 @@
                             href="tel:+919858277700"
                             class="contact-action">
 
-                            ☎
+                            <span aria-hidden="true">
+                                ☎
+                            </span>
+
                             <span>
                                 Call
                             </span>
@@ -1076,7 +1096,10 @@
                             rel="noopener noreferrer"
                             class="contact-action">
 
-                            ◉
+                            <span aria-hidden="true">
+                                ◉
+                            </span>
+
                             <span>
                                 WhatsApp
                             </span>
@@ -1090,7 +1113,10 @@
                             rel="noopener noreferrer"
                             class="contact-action">
 
-                            ⌖
+                            <span aria-hidden="true">
+                                ⌖
+                            </span>
+
                             <span>
                                 Directions
                             </span>
@@ -1203,7 +1229,7 @@
 
             <!-- BRAND -->
 
-            <div>
+            <div class="footer-brand">
 
                 <a
                     href="#home"
@@ -1230,7 +1256,7 @@
 
             <!-- QUICK LINKS -->
 
-            <div>
+            <div class="footer-links">
 
                 <h4>
                     Quick Links
@@ -1277,7 +1303,7 @@
 
             <!-- CONTACT -->
 
-            <div>
+            <div class="footer-contact">
 
                 <h4>
                     Contact Info
@@ -1285,10 +1311,12 @@
 
 
                 <p>
+
                     Near Watane Lawns,<br>
                     Akola Road, Washim,<br>
                     Maharashtra 444505,<br>
                     India
+
                 </p>
 
 
@@ -1306,7 +1334,7 @@
 
             <!-- SOCIAL -->
 
-            <div>
+            <div class="footer-social">
 
                 <h4>
                     Follow Us
@@ -1321,13 +1349,23 @@
 
                 <div class="social-links">
 
-                    <a href="#" aria-label="Facebook">
+                    <a
+                        href="#"
+                        aria-label="Facebook">
+
                         f
+
                     </a>
 
-                    <a href="#" aria-label="Instagram">
+
+                    <a
+                        href="#"
+                        aria-label="Instagram">
+
                         ◎
+
                     </a>
+
 
                     <a
                         href="https://wa.me/919858277700"
