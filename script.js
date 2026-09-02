@@ -10,101 +10,422 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
 const navLinks = document.querySelectorAll(".nav-link");
 
+if (menuToggle && navMenu) {
 
-menuToggle.addEventListener("click", () => {
+    menuToggle.addEventListener("click", () => {
 
-    navMenu.classList.toggle("active");
+        const isOpen = navMenu.classList.toggle("open");
 
-});
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
 
-
-/* Close menu when link is clicked */
-
-navLinks.forEach((link) => {
-
-    link.addEventListener("click", () => {
-
-        navMenu.classList.remove("active");
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
 
     });
 
-});
+
+    /* Close menu when link is clicked */
+
+    navLinks.forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+            navMenu.classList.remove("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+        });
+
+    });
+
+
+    /* Close menu when clicking outside */
+
+    document.addEventListener("click", (event) => {
+
+        if (
+            navMenu.classList.contains("open") &&
+            !navMenu.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ) {
+
+            navMenu.classList.remove("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+        }
+
+    });
+
+}
 
 
 /* ================= ACTIVE NAV LINK ================= */
 
-navLinks.forEach((link) => {
+const sections = document.querySelectorAll(
+    "main section[id]"
+);
 
-    link.addEventListener("click", () => {
+if (sections.length && navLinks.length) {
 
-        navLinks.forEach((item) => {
+    const navObserver = new IntersectionObserver(
 
-            item.classList.remove("active");
+        (entries) => {
 
-        });
+            entries.forEach((entry) => {
 
-        link.classList.add("active");
+                if (entry.isIntersecting) {
+
+                    navLinks.forEach((link) => {
+
+                        link.classList.remove("active");
+
+                        if (
+                            link.getAttribute("href") ===
+                            "#" + entry.target.id
+                        ) {
+
+                            link.classList.add("active");
+
+                        }
+
+                    });
+
+                }
+
+            });
+
+        },
+
+        {
+            rootMargin: "-35% 0px -55% 0px"
+        }
+
+    );
+
+
+    sections.forEach((section) => {
+
+        navObserver.observe(section);
 
     });
 
-});
+}
 
 
 /* ================= NAVBAR SCROLL ================= */
 
-window.addEventListener("scroll", () => {
+const navbar = document.querySelector(".navbar");
 
-    const navbar = document.querySelector(".navbar");
+if (navbar) {
 
-    if (window.scrollY > 50) {
+    const updateNavbar = () => {
 
-        navbar.classList.add("scrolled");
+        if (window.scrollY > 50) {
 
-    } else {
+            navbar.classList.add("scrolled");
 
-        navbar.classList.remove("scrolled");
+        } else {
 
-    }
+            navbar.classList.remove("scrolled");
 
-});
+        }
+
+    };
+
+
+    window.addEventListener(
+        "scroll",
+        updateNavbar,
+        { passive: true }
+    );
+
+
+    updateNavbar();
+
+}
 
 
 /* ================= SCROLL REVEAL ================= */
 
 const revealElements = document.querySelectorAll(
-    ".section-heading, .about-content, .feature-card, .room-card, .restaurant-content, .menu-item, .gallery-item, .contact-content"
+    ".section-heading, " +
+    ".about-content, " +
+    ".about-image, " +
+    ".room-card, " +
+    ".restaurant-content, " +
+    ".restaurant-image, " +
+    ".events-content, " +
+    ".contact-content, " +
+    ".map-container, " +
+    ".final-cta"
 );
 
 
-const revealObserver = new IntersectionObserver(
+if ("IntersectionObserver" in window) {
 
-    (entries) => {
+    const revealObserver = new IntersectionObserver(
 
-        entries.forEach((entry) => {
+        (entries) => {
 
-            if (entry.isIntersecting) {
+            entries.forEach((entry) => {
 
-                entry.target.classList.add("show");
+                if (entry.isIntersecting) {
 
-                revealObserver.unobserve(entry.target);
+                    entry.target.classList.add("show");
 
-            }
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.15
+        }
+
+    );
+
+
+    revealElements.forEach((element) => {
+
+        element.classList.add("reveal");
+
+        revealObserver.observe(element);
+
+    });
+
+} else {
+
+    revealElements.forEach((element) => {
+
+        element.classList.add("show");
+
+    });
+
+}
+
+
+/* ================= FOOD PHOTOGRAPHY CAROUSEL ================= */
+
+const foodTrack =
+    document.querySelector(".food-carousel-track");
+
+const foodSlides =
+    document.querySelectorAll(".food-slide");
+
+const foodPrev =
+    document.querySelector(".food-carousel-prev");
+
+const foodNext =
+    document.querySelector(".food-carousel-next");
+
+const foodDots =
+    document.querySelector(".food-carousel-dots");
+
+
+if (
+    foodTrack &&
+    foodSlides.length &&
+    foodPrev &&
+    foodNext &&
+    foodDots
+) {
+
+    let currentFoodIndex = 0;
+
+
+    /* Create navigation dots */
+
+    foodSlides.forEach((_, index) => {
+
+        const dot =
+            document.createElement("button");
+
+        dot.type = "button";
+
+        dot.className =
+            "food-carousel-dot";
+
+        dot.setAttribute(
+            "aria-label",
+            `Show food image ${index + 1}`
+        );
+
+
+        dot.addEventListener("click", () => {
+
+            goToFoodSlide(index);
 
         });
 
-    },
 
-    {
-        threshold: 0.15
-    }
+        foodDots.appendChild(dot);
 
-);
+    });
 
 
-revealElements.forEach((element) => {
+    const updateFoodDots = () => {
 
-    element.classList.add("reveal");
+        const dots =
+            document.querySelectorAll(
+                ".food-carousel-dot"
+            );
 
-    revealObserver.observe(element);
 
-});
+        dots.forEach((dot, index) => {
+
+            dot.classList.toggle(
+                "active",
+                index === currentFoodIndex
+            );
+
+        });
+
+    };
+
+
+    const goToFoodSlide = (index) => {
+
+        currentFoodIndex =
+            (index + foodSlides.length) %
+            foodSlides.length;
+
+
+        foodTrack.scrollTo({
+
+            left:
+                foodTrack.clientWidth *
+                currentFoodIndex,
+
+            behavior: "smooth"
+
+        });
+
+
+        updateFoodDots();
+
+    };
+
+
+    /* Previous button */
+
+    foodPrev.addEventListener(
+        "click",
+        () => {
+
+            goToFoodSlide(
+                currentFoodIndex - 1
+            );
+
+        }
+    );
+
+
+    /* Next button */
+
+    foodNext.addEventListener(
+        "click",
+        () => {
+
+            goToFoodSlide(
+                currentFoodIndex + 1
+            );
+
+        }
+    );
+
+
+    /* Update active dot while manually swiping */
+
+    foodTrack.addEventListener(
+        "scroll",
+        () => {
+
+            const index =
+                Math.round(
+                    foodTrack.scrollLeft /
+                    foodTrack.clientWidth
+                );
+
+
+            if (
+                index >= 0 &&
+                index < foodSlides.length &&
+                index !== currentFoodIndex
+            ) {
+
+                currentFoodIndex = index;
+
+                updateFoodDots();
+
+            }
+
+        },
+        { passive: true }
+    );
+
+
+    /* Keyboard support */
+
+    foodTrack.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (event.key === "ArrowLeft") {
+
+                event.preventDefault();
+
+                goToFoodSlide(
+                    currentFoodIndex - 1
+                );
+
+            }
+
+
+            if (event.key === "ArrowRight") {
+
+                event.preventDefault();
+
+                goToFoodSlide(
+                    currentFoodIndex + 1
+                );
+
+            }
+
+        }
+    );
+
+
+    /* First dot active */
+
+    updateFoodDots();
+
+}
