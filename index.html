@@ -37,1943 +37,9 @@
          COMPLETE RESPONSIVE CSS
          ===================================================== -->
 
-    <style>
+    
 
-        /* =================================================
-           RESET
-           ================================================= */
-
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
-
-
-        body {
-            width: 100%;
-            min-height: 100vh;
-            overflow-x: hidden;
-            background: #171412;
-            color: #f4eee6;
-            font-family: "Poppins", sans-serif;
-            line-height: 1.7;
-        }
-
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-
-        button {
-            font-family: inherit;
-        }
-
-
-        /* =================================================
-           VARIABLES
-           ================================================= */
-
-        :root {
-
-            --dark: #171412;
-            --dark-2: #211c19;
-            --dark-3: #29231f;
-
-            --cream: #f4eee6;
-            --cream-2: #e8ded2;
-
-            --gold: #c9a45c;
-            --gold-light: #dfc27f;
-
-            --text-muted: #b9afa5;
-
-            --border: rgba(201, 164, 92, 0.25);
-
-            --container: 1200px;
-
-            --radius: 4px;
-
-            --transition: 0.3s ease;
-        }
-
-
-        /* =================================================
-           CONTAINER
-           ================================================= */
-
-        .container {
-            width: min(
-                calc(100% - 40px),
-                var(--container)
-            );
-
-            margin-inline: auto;
-        }
-
-
-        /* =================================================
-           NAVBAR
-           ================================================= */
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-
-            background: rgba(23, 20, 18, 0.94);
-
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-
-        .navbar-container {
-            min-height: 78px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 30px;
-        }
-
-
-        /* =================================================
-           LOGO
-           ================================================= */
-
-        .logo {
-            flex-shrink: 0;
-
-            display: flex;
-            flex-direction: column;
-
-            line-height: 1;
-
-            color: var(--cream);
-        }
-
-
-        .logo-small {
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: 5px;
-
-            color: var(--gold);
-
-            margin-bottom: 5px;
-        }
-
-
-        .logo-main {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 34px;
-            font-weight: 600;
-
-            letter-spacing: 3px;
-        }
-
-
-        /* =================================================
-           DESKTOP NAV
-           ================================================= */
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-
-            gap: clamp(18px, 2.5vw, 36px);
-        }
-
-
-        .nav-link {
-            position: relative;
-
-            color: #d8d0c8;
-
-            font-size: 13px;
-            font-weight: 400;
-
-            letter-spacing: 0.5px;
-
-            padding: 10px 0;
-
-            transition: color var(--transition);
-        }
-
-
-        .nav-link::after {
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            bottom: 2px;
-
-            width: 0;
-            height: 1px;
-
-            background: var(--gold);
-
-            transition: width var(--transition);
-        }
-
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--gold-light);
-        }
-
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-
-        /* =================================================
-           MOBILE MENU BUTTON
-           ================================================= */
-
-        .menu-toggle {
-            display: none;
-
-            width: 44px;
-            height: 44px;
-
-            border: 1px solid var(--border);
-
-            background: transparent;
-
-            cursor: pointer;
-
-            padding: 10px;
-
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-        }
-
-
-        .menu-toggle span {
-            display: block;
-
-            width: 100%;
-            height: 2px;
-
-            background: var(--cream);
-
-            transition: var(--transition);
-        }
-
-
-        /* =================================================
-           HERO
-           ================================================= */
-
-        .hero {
-            position: relative;
-
-            min-height: 100svh;
-
-            display: flex;
-            align-items: center;
-
-            padding: 140px 0 100px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(23,20,18,0.96) 0%,
-                    rgba(23,20,18,0.78) 45%,
-                    rgba(23,20,18,0.45) 100%
-                ),
-                linear-gradient(
-                    180deg,
-                    #302721,
-                    #171412
-                );
-
-            isolation: isolate;
-        }
-
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-
-            background:
-                radial-gradient(
-                    circle at 80% 30%,
-                    rgba(201,164,92,0.13),
-                    transparent 35%
-                );
-
-            z-index: -1;
-        }
-
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-
-        .hero-subtitle,
-        .section-label {
-            color: var(--gold);
-
-            font-size: 12px;
-            font-weight: 500;
-
-            letter-spacing: 4px;
-
-            margin-bottom: 18px;
-        }
-
-
-        .hero-title {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: clamp(
-                58px,
-                8vw,
-                110px
-            );
-
-            font-weight: 500;
-
-            line-height: 0.95;
-
-            letter-spacing: -2px;
-
-            margin-bottom: 30px;
-        }
-
-
-        .hero-title span {
-            display: block;
-            color: var(--gold);
-        }
-
-
-        .hero-description {
-            max-width: 600px;
-
-            color: var(--text-muted);
-
-            font-size: clamp(
-                15px,
-                1.4vw,
-                18px
-            );
-
-            line-height: 1.8;
-
-            margin-bottom: 38px;
-        }
-
-
-        /* =================================================
-           BUTTONS
-           ================================================= */
-
-        .hero-buttons,
-        .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-
-        .btn {
-            min-height: 52px;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 13px 27px;
-
-            border: 1px solid transparent;
-
-            font-size: 12px;
-            font-weight: 500;
-
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-
-            transition:
-                transform var(--transition),
-                background var(--transition),
-                color var(--transition),
-                border-color var(--transition);
-        }
-
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-
-        .btn-primary {
-            background: var(--gold);
-            color: #171412;
-        }
-
-
-        .btn-primary:hover {
-            background: var(--gold-light);
-        }
-
-
-        .btn-outline {
-            border-color: var(--gold);
-            color: var(--cream);
-            background: transparent;
-        }
-
-
-        .btn-outline:hover {
-            background: var(--gold);
-            color: #171412;
-        }
-
-
-        /* =================================================
-           SCROLL INDICATOR
-           ================================================= */
-
-        .scroll-indicator {
-            position: absolute;
-
-            right: 40px;
-            bottom: 40px;
-
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            color: var(--text-muted);
-
-            font-size: 9px;
-            letter-spacing: 2px;
-        }
-
-
-        .scroll-line {
-            width: 45px;
-            height: 1px;
-
-            background: var(--gold);
-        }
-
-
-        /* =================================================
-           QUICK ACTIONS
-           ================================================= */
-
-        .quick-actions {
-            position: relative;
-            z-index: 5;
-
-            background: var(--dark-2);
-
-            border-block: 1px solid rgba(255,255,255,0.06);
-        }
-
-
-        .quick-actions-container {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-        }
-
-
-        .quick-action {
-            min-height: 100px;
-
-            display: flex;
-            align-items: center;
-
-            gap: 15px;
-
-            padding: 20px;
-
-            border-right: 1px solid rgba(255,255,255,0.08);
-
-            transition: background var(--transition);
-        }
-
-
-        .quick-action:last-child {
-            border-right: 0;
-        }
-
-
-        .quick-action:hover {
-            background: var(--dark-3);
-        }
-
-
-        .action-icon {
-            width: 42px;
-            height: 42px;
-
-            flex-shrink: 0;
-
-            display: grid;
-            place-items: center;
-
-            border: 1px solid var(--border);
-
-            color: var(--gold);
-
-            font-size: 18px;
-        }
-
-
-        .action-content {
-            display: flex;
-            flex-direction: column;
-
-            min-width: 0;
-        }
-
-
-        .action-content small {
-            color: var(--gold);
-
-            font-size: 9px;
-            letter-spacing: 2px;
-        }
-
-
-        .action-content strong {
-            color: var(--cream);
-
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-
-        /* =================================================
-           GENERAL SECTION
-           ================================================= */
-
-        .section {
-            padding-block: clamp(
-                75px,
-                9vw,
-                130px
-            );
-        }
-
-
-        .section-heading {
-            max-width: 700px;
-
-            margin-bottom: 55px;
-        }
-
-
-        .section-heading h2,
-        .about-content h2,
-        .restaurant-content h2,
-        .contact-content h2,
-        .events-content h2,
-        .final-cta h2 {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: clamp(
-                42px,
-                5vw,
-                72px
-            );
-
-            font-weight: 500;
-
-            line-height: 1.05;
-
-            letter-spacing: -1px;
-        }
-
-
-        h2 span {
-            color: var(--gold);
-        }
-
-
-        /* =================================================
-           ABOUT
-           ================================================= */
-
-        .about {
-            background: var(--dark);
-        }
-
-
-        .about-grid {
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 1fr)
-                minmax(0, 1fr);
-
-            gap: clamp(40px, 7vw, 100px);
-
-            align-items: center;
-        }
-
-
-        .about-image {
-            min-height: 550px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #3a3029,
-                    #201b18
-                );
-
-            border: 1px solid var(--border);
-
-            display: grid;
-            place-items: center;
-        }
-
-
-        .image-placeholder {
-            width: 75%;
-            height: 75%;
-
-            display: grid;
-            place-items: center;
-
-            border: 1px solid var(--border);
-
-            color: var(--gold);
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: clamp(
-                24px,
-                3vw,
-                42px
-            );
-
-            letter-spacing: 4px;
-
-            text-align: center;
-        }
-
-
-        .about-content > p:not(.section-label) {
-            max-width: 650px;
-
-            color: var(--text-muted);
-
-            font-size: 15px;
-
-            margin-top: 25px;
-        }
-
-
-        .text-button {
-            display: inline-block;
-
-            margin-top: 30px;
-
-            color: var(--gold);
-
-            font-size: 12px;
-
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-
-            border-bottom: 1px solid var(--gold);
-
-            padding-bottom: 5px;
-        }
-
-
-        /* =================================================
-           FEATURES
-           ================================================= */
-
-        .features {
-            background: var(--dark-2);
-        }
-
-
-        .features-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, minmax(0, 1fr));
-
-            border-top: 1px solid var(--border);
-            border-left: 1px solid var(--border);
-        }
-
-
-        .feature-card {
-            min-height: 260px;
-
-            padding: 35px 28px;
-
-            border-right: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-
-            transition:
-                background var(--transition),
-                transform var(--transition);
-        }
-
-
-        .feature-card:hover {
-            background: var(--dark-3);
-            transform: translateY(-4px);
-        }
-
-
-        .feature-card > span {
-            color: var(--gold);
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 25px;
-        }
-
-
-        .feature-card h3 {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 28px;
-            font-weight: 500;
-
-            margin: 30px 0 12px;
-        }
-
-
-        .feature-card p {
-            color: var(--text-muted);
-
-            font-size: 13px;
-
-            line-height: 1.8;
-        }
-
-
-        /* =================================================
-           ROOMS
-           ================================================= */
-
-        .rooms {
-            background: var(--dark);
-        }
-
-
-        .rooms-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 24px;
-        }
-
-
-        .room-card {
-            background: var(--dark-2);
-
-            border: 1px solid rgba(255,255,255,0.07);
-
-            overflow: hidden;
-
-            transition:
-                transform var(--transition),
-                border-color var(--transition);
-        }
-
-
-        .room-card:hover {
-            transform: translateY(-6px);
-
-            border-color: var(--border);
-        }
-
-
-        .room-image {
-            aspect-ratio: 16 / 10;
-
-            display: grid;
-            place-items: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #3a3029,
-                    #211c19
-                );
-
-            color: var(--gold);
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 25px;
-        }
-
-
-        .room-content {
-            padding: 28px;
-        }
-
-
-        .card-label {
-            color: var(--gold);
-
-            font-size: 9px;
-            letter-spacing: 2px;
-        }
-
-
-        .room-content h3 {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 31px;
-            font-weight: 500;
-
-            margin: 12px 0;
-        }
-
-
-        .room-content > p:not(.card-label) {
-            color: var(--text-muted);
-
-            font-size: 13px;
-
-            margin-bottom: 20px;
-        }
-
-
-        .room-content a {
-            color: var(--gold);
-
-            font-size: 11px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-
-        /* =================================================
-           RESTAURANT
-           ================================================= */
-
-        .restaurant {
-            background: var(--dark-2);
-        }
-
-
-        .restaurant-grid {
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 0.85fr)
-                minmax(0, 1.15fr);
-
-            gap: clamp(40px, 7vw, 100px);
-
-            align-items: center;
-        }
-
-
-        .restaurant-content > p:not(.section-label) {
-            max-width: 550px;
-
-            color: var(--text-muted);
-
-            margin: 25px 0 30px;
-
-            font-size: 15px;
-        }
-
-
-        .restaurant-image {
-            min-height: 520px;
-
-            display: grid;
-            place-items: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #49382c,
-                    #211c19
-                );
-
-            border: 1px solid var(--border);
-
-            color: var(--gold);
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 30px;
-
-            text-align: center;
-        }
-
-
-        /* =================================================
-           MENU
-           ================================================= */
-
-        .menu {
-            background: var(--dark);
-        }
-
-
-        .menu-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            border-top: 1px solid var(--border);
-            border-left: 1px solid var(--border);
-        }
-
-
-        .menu-item {
-            min-height: 180px;
-
-            padding: 30px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            border-right: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-
-            transition: background var(--transition);
-        }
-
-
-        .menu-item:hover {
-            background: var(--dark-2);
-        }
-
-
-        .menu-item span {
-            color: var(--gold);
-
-            font-size: 12px;
-            letter-spacing: 2px;
-        }
-
-
-        .menu-item h3 {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 30px;
-            font-weight: 500;
-        }
-
-
-        /* =================================================
-           EVENTS
-           ================================================= */
-
-        .events {
-            position: relative;
-
-            min-height: 620px;
-
-            display: flex;
-            align-items: center;
-
-            background:
-                linear-gradient(
-                    rgba(23,20,18,0.78),
-                    rgba(23,20,18,0.92)
-                ),
-                linear-gradient(
-                    135deg,
-                    #4b3a2d,
-                    #1b1715
-                );
-        }
-
-
-        .events-content {
-            position: relative;
-            z-index: 2;
-
-            max-width: 800px;
-        }
-
-
-        .events-content > p:not(.section-label) {
-            max-width: 550px;
-
-            color: var(--text-muted);
-
-            margin: 25px 0 30px;
-        }
-
-
-        /* =================================================
-           GALLERY
-           ================================================= */
-
-        .gallery {
-            background: var(--dark-2);
-        }
-
-
-        .gallery-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 12px;
-        }
-
-
-        .gallery-item {
-            min-height: 250px;
-
-            display: grid;
-            place-items: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #3a3029,
-                    #211c19
-                );
-
-            border: 1px solid rgba(255,255,255,0.07);
-
-            color: var(--gold);
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 28px;
-
-            transition:
-                transform var(--transition),
-                border-color var(--transition);
-        }
-
-
-        .gallery-item:hover {
-            transform: scale(0.985);
-            border-color: var(--border);
-        }
-
-
-        /* =================================================
-           CONTACT
-           ================================================= */
-
-        .contact {
-            background: var(--dark);
-        }
-
-
-        .contact-grid {
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 0.9fr)
-                minmax(0, 1.1fr);
-
-            gap: clamp(40px, 7vw, 90px);
-
-            align-items: stretch;
-        }
-
-
-        .contact-details {
-            display: grid;
-
-            gap: 25px;
-
-            margin-top: 35px;
-        }
-
-
-        .contact-detail small {
-            color: var(--gold);
-
-            font-size: 9px;
-            letter-spacing: 2px;
-        }
-
-
-        .contact-detail p {
-            color: var(--text-muted);
-
-            font-size: 14px;
-
-            margin-top: 5px;
-        }
-
-
-        .contact-detail a {
-            color: var(--cream);
-
-        }
-
-
-        .contact-actions {
-            display: flex;
-            flex-wrap: wrap;
-
-            gap: 10px;
-
-            margin-top: 35px;
-        }
-
-
-        .contact-action {
-            min-height: 48px;
-
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-
-            padding: 10px 17px;
-
-            border: 1px solid var(--border);
-
-            color: var(--cream);
-
-            font-size: 11px;
-
-            transition: var(--transition);
-        }
-
-
-        .contact-action:hover {
-            background: var(--gold);
-            color: var(--dark);
-        }
-
-
-        .map-container {
-            width: 100%;
-            min-height: 500px;
-
-            border: 1px solid var(--border);
-
-            overflow: hidden;
-        }
-
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-
-            min-height: 500px;
-
-            display: block;
-
-            border: 0;
-        }
-
-
-        /* =================================================
-           FINAL CTA
-           ================================================= */
-
-        .final-cta {
-            padding-block: 100px;
-
-            text-align: center;
-
-            background: var(--dark-2);
-
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
-
-
-        .final-cta .section-label {
-            margin-bottom: 15px;
-        }
-
-
-        .final-cta h2 {
-            max-width: 700px;
-
-            margin: 0 auto 35px;
-        }
-
-
-        .cta-buttons {
-            justify-content: center;
-        }
-
-
-        /* =================================================
-           FOOTER
-           ================================================= */
-
-        .footer {
-            background: #100e0d;
-
-            padding-top: 75px;
-        }
-
-
-        .footer-grid {
-            display: grid;
-
-            grid-template-columns:
-                1.3fr
-                1fr
-                1.2fr
-                1fr;
-
-            gap: 45px;
-
-            padding-bottom: 60px;
-        }
-
-
-        .footer h4 {
-            color: var(--gold);
-
-            font-size: 11px;
-            font-weight: 500;
-
-            letter-spacing: 2px;
-            text-transform: uppercase;
-
-            margin-bottom: 20px;
-        }
-
-
-        .footer p,
-        .footer a {
-            color: var(--text-muted);
-
-            font-size: 13px;
-        }
-
-
-        .footer-brand .logo-main {
-            font-size: 32px;
-        }
-
-
-        .footer-brand > p {
-            margin-top: 15px;
-        }
-
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-
-        .footer-links a:hover,
-        .footer-contact a:hover {
-            color: var(--gold);
-        }
-
-
-        .footer-contact p + p {
-            margin-top: 15px;
-        }
-
-
-        .social-links {
-            display: flex;
-            gap: 10px;
-
-            margin-top: 20px;
-        }
-
-
-        .social-links a {
-            width: 38px;
-            height: 38px;
-
-            display: grid;
-            place-items: center;
-
-            border: 1px solid var(--border);
-
-            color: var(--gold);
-
-            transition: var(--transition);
-        }
-
-
-        .social-links a:hover {
-            background: var(--gold);
-            color: var(--dark);
-        }
-
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.07);
-
-            padding: 20px;
-
-            text-align: center;
-        }
-
-
-        .footer-bottom p {
-            color: #817970;
-
-            font-size: 11px;
-        }
-
-
-        /* =================================================
-           LARGE TABLET
-           ================================================= */
-
-        @media (max-width: 1000px) {
-
-            .nav-menu {
-                gap: 18px;
-            }
-
-
-            .nav-link {
-                font-size: 12px;
-            }
-
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-
-            .rooms-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-
-            .rooms-grid .room-card:last-child {
-                grid-column: 1 / -1;
-                max-width: calc(50% - 12px);
-                width: 100%;
-                justify-self: center;
-            }
-
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-        }
-
-
-        /* =================================================
-           MOBILE NAVIGATION
-           ================================================= */
-
-        @media (max-width: 800px) {
-
-            .container {
-                width: min(
-                    calc(100% - 32px),
-                    var(--container)
-                );
-            }
-
-
-            .navbar-container {
-                min-height: 70px;
-            }
-
-
-            .logo-main {
-                font-size: 29px;
-            }
-
-
-            .logo-small {
-                font-size: 8px;
-                letter-spacing: 4px;
-            }
-
-
-            .menu-toggle {
-                display: flex;
-            }
-
-
-            .nav-menu {
-                position: absolute;
-
-                top: 100%;
-                left: 0;
-
-                width: 100%;
-
-                padding: 15px 16px 20px;
-
-                display: none;
-                flex-direction: column;
-                align-items: stretch;
-
-                gap: 2px;
-
-                background: rgba(23,20,18,0.98);
-
-                border-top: 1px solid rgba(255,255,255,0.06);
-
-                box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-            }
-
-
-            .nav-menu.open {
-                display: flex;
-            }
-
-
-            .nav-link {
-                width: 100%;
-
-                padding: 13px 5px;
-
-                font-size: 13px;
-            }
-
-
-            .nav-link::after {
-                display: none;
-            }
-
-
-            /* HERO */
-
-            .hero {
-                min-height: 100svh;
-
-                padding: 125px 0 80px;
-
-                background:
-                    linear-gradient(
-                        rgba(23,20,18,0.88),
-                        rgba(23,20,18,0.96)
-                    ),
-                    linear-gradient(
-                        135deg,
-                        #403229,
-                        #171412
-                    );
-            }
-
-
-            .hero-content {
-                max-width: 100%;
-            }
-
-
-            .hero-subtitle {
-                font-size: 9px;
-                letter-spacing: 2.5px;
-            }
-
-
-            .hero-title {
-                font-size: clamp(
-                    50px,
-                    15vw,
-                    78px
-                );
-
-                letter-spacing: -1px;
-
-                margin-bottom: 25px;
-            }
-
-
-            .hero-description {
-                font-size: 14px;
-
-                line-height: 1.75;
-
-                margin-bottom: 30px;
-            }
-
-
-            .hero-buttons {
-                display: grid;
-
-                grid-template-columns: 1fr;
-
-                width: 100%;
-            }
-
-
-            .btn {
-                width: 100%;
-
-                min-height: 50px;
-            }
-
-
-            .scroll-indicator {
-                display: none;
-            }
-
-
-            /* QUICK ACTIONS */
-
-            .quick-actions-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-
-            .quick-action {
-                min-height: 85px;
-
-                padding: 15px;
-
-                border-right: 1px solid rgba(255,255,255,0.08);
-                border-bottom: 1px solid rgba(255,255,255,0.08);
-            }
-
-
-            .quick-action:nth-child(2) {
-                border-right: 0;
-            }
-
-
-            .quick-action:nth-child(3),
-            .quick-action:nth-child(4) {
-                border-bottom: 0;
-            }
-
-
-            .action-icon {
-                width: 36px;
-                height: 36px;
-
-                font-size: 15px;
-            }
-
-
-            .action-content small {
-                font-size: 8px;
-            }
-
-
-            .action-content strong {
-                font-size: 11px;
-            }
-
-
-            /* ABOUT */
-
-            .about-grid,
-            .restaurant-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-
-                gap: 45px;
-            }
-
-
-            .about-image {
-                min-height: 380px;
-            }
-
-
-            .image-placeholder {
-                width: 80%;
-                height: 80%;
-
-                font-size: 25px;
-            }
-
-
-            /* SECTION */
-
-            .section {
-                padding-block: 75px;
-            }
-
-
-            .section-heading {
-                margin-bottom: 35px;
-            }
-
-
-            .section-label {
-                font-size: 9px;
-
-                letter-spacing: 2.5px;
-
-                margin-bottom: 14px;
-            }
-
-
-            .section-heading h2,
-            .about-content h2,
-            .restaurant-content h2,
-            .contact-content h2,
-            .events-content h2,
-            .final-cta h2 {
-                font-size: clamp(
-                    40px,
-                    12vw,
-                    58px
-                );
-            }
-
-
-            /* FEATURES */
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .feature-card {
-                min-height: auto;
-
-                padding: 28px 22px;
-            }
-
-
-            .feature-card h3 {
-                font-size: 27px;
-
-                margin: 20px 0 10px;
-            }
-
-
-            /* ROOMS */
-
-            .rooms-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .rooms-grid .room-card:last-child {
-                grid-column: auto;
-
-                max-width: none;
-            }
-
-
-            .room-content {
-                padding: 24px 20px;
-            }
-
-
-            /* RESTAURANT */
-
-            .restaurant-image {
-                min-height: 360px;
-
-                font-size: 25px;
-            }
-
-
-            /* MENU */
-
-            .menu-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-
-            .menu-item {
-                min-height: 145px;
-
-                padding: 22px 18px;
-            }
-
-
-            .menu-item h3 {
-                font-size: 25px;
-            }
-
-
-            /* EVENTS */
-
-            .events {
-                min-height: 520px;
-            }
-
-
-            /* GALLERY */
-
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-
-                gap: 8px;
-            }
-
-
-            .gallery-item {
-                min-height: 180px;
-
-                font-size: 23px;
-            }
-
-
-            /* CONTACT */
-
-            .map-container,
-            .map-container iframe {
-                min-height: 380px;
-            }
-
-
-            .contact-actions {
-                display: grid;
-
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-
-            .contact-action {
-                justify-content: center;
-
-                padding-inline: 8px;
-            }
-
-
-            /* CTA */
-
-            .final-cta {
-                padding-block: 75px;
-            }
-
-
-            /* FOOTER */
-
-            .footer {
-                padding-top: 60px;
-            }
-
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-
-                gap: 40px 25px;
-            }
-
-        }
-
-
-        /* =================================================
-           SMALL MOBILE
-           ================================================= */
-
-        @media (max-width: 480px) {
-
-            .container {
-                width: calc(100% - 28px);
-            }
-
-
-            .navbar-container {
-                min-height: 64px;
-            }
-
-
-            .logo-main {
-                font-size: 26px;
-                letter-spacing: 2px;
-            }
-
-
-            .hero {
-                padding-top: 110px;
-            }
-
-
-            .hero-title {
-                font-size: clamp(
-                    46px,
-                    14vw,
-                    65px
-                );
-
-                line-height: 0.98;
-            }
-
-
-            .hero-description {
-                font-size: 13px;
-            }
-
-
-            .quick-action {
-                gap: 9px;
-
-                padding: 12px 10px;
-            }
-
-
-            .action-icon {
-                width: 32px;
-                height: 32px;
-            }
-
-
-            .action-content strong {
-                font-size: 10px;
-            }
-
-
-            .about-image {
-                min-height: 300px;
-            }
-
-
-            .image-placeholder {
-                width: 85%;
-                height: 75%;
-
-                font-size: 21px;
-
-                letter-spacing: 2px;
-            }
-
-
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .menu-item {
-                min-height: 125px;
-            }
-
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .gallery-item {
-                min-height: 230px;
-            }
-
-
-            .contact-actions {
-                grid-template-columns: 1fr;
-            }
-
-
-            .contact-action {
-                justify-content: flex-start;
-
-                padding: 13px 16px;
-            }
-
-
-            .map-container,
-            .map-container iframe {
-                min-height: 320px;
-            }
-
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .footer-bottom {
-                padding-inline: 14px;
-            }
-
-        }
-
-
-        /* =================================================
-           VERY SMALL PHONES
-           ================================================= */
-
-        @media (max-width: 360px) {
-
-            .hero-title {
-                font-size: 43px;
-            }
-
-
-            .quick-action {
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                gap: 6px;
-            }
-
-
-            .action-content strong {
-                font-size: 9px;
-            }
-
-        }
-
-
-        /* =================================================
-           REDUCE MOTION
-           ================================================= */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-
-            *,
-            *::before,
-            *::after {
-                transition-duration: 0.01ms !important;
-            }
-
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -2033,11 +99,6 @@
                 <a href="#events"
                     class="nav-link">
                     Events
-                </a>
-
-                <a href="#gallery"
-                    class="nav-link">
-                    Gallery
                 </a>
 
                 <a href="#contact"
@@ -2249,11 +310,10 @@
 
 
                 <div class="about-image">
-
-                    <div class="image-placeholder">
-                        HOTEL EVENTO
-                    </div>
-
+                    <img
+                        src="assets/hotel-evento-logo.png"
+                        alt="Hotel Evento logo"
+                        class="about-logo">
                 </div>
 
 
@@ -2300,102 +360,7 @@
 
         </section>
 
-
-
-        <!-- FEATURES -->
-
-        <section class="features section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="section-label">
-                        THE EVENTO EXPERIENCE
-                    </p>
-
-                    <h2>
-                        Everything You Need
-                    </h2>
-
-                </div>
-
-
-                <div class="features-grid">
-
-
-                    <article class="feature-card">
-
-                        <span>01</span>
-
-                        <h3>
-                            Comfortable Rooms
-                        </h3>
-
-                        <p>
-                            Relax in a comfortable environment
-                            designed for a pleasant stay.
-                        </p>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <span>02</span>
-
-                        <h3>
-                            Fine Dining
-                        </h3>
-
-                        <p>
-                            Enjoy delicious food and a variety
-                            of dining choices.
-                        </p>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <span>03</span>
-
-                        <h3>
-                            Events & Celebrations
-                        </h3>
-
-                        <p>
-                            Create memorable moments for your
-                            special occasions.
-                        </p>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <span>04</span>
-
-                        <h3>
-                            Convenient Location
-                        </h3>
-
-                        <p>
-                            Conveniently located on Akola Road
-                            in Washim.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ROOMS -->
+<!-- ROOMS -->
 
         <section id="rooms"
             class="rooms section">
@@ -2553,125 +518,63 @@
                     </p>
 
 
-                    <a href="#menu"
+                    <a href="#contact"
                         class="btn btn-primary">
-                        View Menu
+                        Enquire About Dining
                     </a>
 
                 </div>
 
 
                 <div class="restaurant-image">
+                    <div class="food-carousel" aria-label="Hotel Evento food photography">
+                        <button class="food-carousel-btn food-carousel-prev"
+                            type="button"
+                            aria-label="Previous food image">‹</button>
 
-                    <span>
-                        Food Photography
-                    </span>
+                        <div class="food-carousel-track" tabindex="0">
+                            <div class="food-slide">
+                                <img src="assets/food-01.jpg" alt="Hotel Evento breakfast plate" loading="lazy">
+                            </div>
+                            <div class="food-slide">
+                                <img src="assets/food-02.jpg" alt="Hotel Evento paratha dish" loading="lazy">
+                            </div>
+                            <div class="food-slide">
+                                <img src="assets/food-03.jpg" alt="Hotel Evento Indian dishes" loading="lazy">
+                            </div>
+                            <div class="food-slide">
+                                <img src="assets/food-04.jpg" alt="Hotel Evento pav bhaji" loading="lazy">
+                            </div>
+                            <div class="food-slide">
+                                <img src="assets/food-05.jpg" alt="Hotel Evento grilled food platter" loading="lazy">
+                            </div>
+                            <div class="food-slide">
+                                <img src="assets/food-06.jpg" alt="Hotel Evento vegetable rice" loading="lazy">
+                            </div>
+                            <div class="food-slide">
+                                <img src="assets/food-07.jpg" alt="Hotel Evento blue mocktail" loading="lazy">
+                            </div>
+                            <div class="food-slide">
+                                <img src="assets/food-08.jpg" alt="Hotel Evento crispy starter platter" loading="lazy">
+                            </div>
+                            <div class="food-slide">
+                                <img src="assets/food-09.jpg" alt="Hotel Evento vegetarian starter platter" loading="lazy">
+                            </div>
+                        </div>
 
+                        <button class="food-carousel-btn food-carousel-next"
+                            type="button"
+                            aria-label="Next food image">›</button>
+
+                        <div class="food-carousel-dots" aria-label="Food image navigation"></div>
+                    </div>
                 </div>
 
             </div>
 
         </section>
 
-
-
-        <!-- MENU -->
-
-        <section id="menu"
-            class="menu section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="section-label">
-                        OUR MENU
-                    </p>
-
-                    <h2>
-                        Something for Everyone
-                    </h2>
-
-                </div>
-
-
-                <div class="menu-grid">
-
-
-                    <article class="menu-item">
-
-                        <span>01</span>
-
-                        <h3>
-                            Starters
-                        </h3>
-
-                    </article>
-
-
-                    <article class="menu-item">
-
-                        <span>02</span>
-
-                        <h3>
-                            Main Course
-                        </h3>
-
-                    </article>
-
-
-                    <article class="menu-item">
-
-                        <span>03</span>
-
-                        <h3>
-                            Rice & Biryani
-                        </h3>
-
-                    </article>
-
-
-                    <article class="menu-item">
-
-                        <span>04</span>
-
-                        <h3>
-                            Chinese
-                        </h3>
-
-                    </article>
-
-
-                    <article class="menu-item">
-
-                        <span>05</span>
-
-                        <h3>
-                            Noodles
-                        </h3>
-
-                    </article>
-
-
-                    <article class="menu-item">
-
-                        <span>06</span>
-
-                        <h3>
-                            Snacks
-                        </h3>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- EVENTS -->
+<!-- EVENTS -->
 
         <section id="events"
             class="events section">
@@ -2711,63 +614,7 @@
 
         </section>
 
-
-
-        <!-- GALLERY -->
-
-        <section id="gallery"
-            class="gallery section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="section-label">
-                        OUR GALLERY
-                    </p>
-
-                    <h2>
-                        Moments at Evento
-                    </h2>
-
-                </div>
-
-
-                <div class="gallery-grid">
-
-                    <div class="gallery-item">
-                        <span>Hotel</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <span>Food</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <span>Restaurant</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <span>Rooms</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <span>Events</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <span>Experience</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- CONTACT -->
+<!-- CONTACT -->
 
         <section id="contact"
             class="contact section">
@@ -2990,7 +837,6 @@
                 <a href="#rooms">Rooms</a>
                 <a href="#restaurant">Restaurant</a>
                 <a href="#events">Events</a>
-                <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
 
             </div>
@@ -3237,6 +1083,129 @@
 
             }
         );
+
+
+        /* =================================================
+           FOOD PHOTOGRAPHY CAROUSEL
+           ================================================= */
+
+        const foodTrack =
+            document.querySelector(".food-carousel-track");
+
+        const foodSlides =
+            document.querySelectorAll(".food-slide");
+
+        const foodPrev =
+            document.querySelector(".food-carousel-prev");
+
+        const foodNext =
+            document.querySelector(".food-carousel-next");
+
+        const foodDots =
+            document.querySelector(".food-carousel-dots");
+
+        if (
+            foodTrack &&
+            foodSlides.length &&
+            foodPrev &&
+            foodNext &&
+            foodDots
+        ) {
+            let currentFoodIndex = 0;
+
+            foodSlides.forEach((_, index) => {
+                const dot = document.createElement("button");
+
+                dot.type = "button";
+                dot.className = "food-carousel-dot";
+                dot.setAttribute(
+                    "aria-label",
+                    `Show food image ${index + 1}`
+                );
+
+                dot.addEventListener("click", () => {
+                    currentFoodIndex = index;
+
+                    foodTrack.scrollTo({
+                        left: foodTrack.clientWidth * currentFoodIndex,
+                        behavior: "smooth"
+                    });
+
+                    updateFoodDots();
+                });
+
+                foodDots.appendChild(dot);
+            });
+
+            const updateFoodDots = () => {
+                const dots =
+                    document.querySelectorAll(".food-carousel-dot");
+
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle(
+                        "active",
+                        index === currentFoodIndex
+                    );
+                });
+            };
+
+            const goToFoodSlide = (index) => {
+                currentFoodIndex =
+                    (index + foodSlides.length) %
+                    foodSlides.length;
+
+                foodTrack.scrollTo({
+                    left: foodTrack.clientWidth * currentFoodIndex,
+                    behavior: "smooth"
+                });
+
+                updateFoodDots();
+            };
+
+            foodPrev.addEventListener(
+                "click",
+                () => goToFoodSlide(currentFoodIndex - 1)
+            );
+
+            foodNext.addEventListener(
+                "click",
+                () => goToFoodSlide(currentFoodIndex + 1)
+            );
+
+            foodTrack.addEventListener("scroll", () => {
+                const index = Math.round(
+                    foodTrack.scrollLeft /
+                    foodTrack.clientWidth
+                );
+
+                if (index !== currentFoodIndex) {
+                    currentFoodIndex =
+                        Math.max(
+                            0,
+                            Math.min(
+                                index,
+                                foodSlides.length - 1
+                            )
+                        );
+
+                    updateFoodDots();
+                }
+            });
+
+            foodTrack.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowLeft") {
+                    event.preventDefault();
+                    goToFoodSlide(currentFoodIndex - 1);
+                }
+
+                if (event.key === "ArrowRight") {
+                    event.preventDefault();
+                    goToFoodSlide(currentFoodIndex + 1);
+                }
+            });
+
+            updateFoodDots();
+        }
 
     </script>
 
